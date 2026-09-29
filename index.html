@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Healthcare Initiative Foundation provides grant funding to organizations working to improve healthcare access and services for underserved residents in Montgomery County.">
+<meta name="theme-color" content="#ffffff">
+<title>Healthcare Initiative Foundation — Expanding access to healthcare in Montgomery County</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com" crossorigin>
+<link rel="preconnect" href="https://videos.pexels.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@1,9..144,300..600&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Healthcare Initiative Foundation — Colour Palette
+   Taken from the HIF logo: the blue of the wordmark, the cyan, green,
+   orange and magenta of the tree.
+   PRIMARY    Deep Blue #0F2F5C · Medium #164081 · Logo Blue #2050A0
+              Light Blue #5487D1 · Ultra Light #E7EEFA
+   SECONDARY  Accent Cyan #0A7AA3 · Accent Light #7FC9F0
+              Leaf Green #6FD39A · Green Light #E7F5EE · White #FFFFFF
+   WARM       Logo Orange #E8862B · Logo Magenta #B03090
+   NEUTRAL    Text #0B1220 · Dark Gray #26303F · Medium Gray #59637A
+              Light Gray #E4E7EE · Ultra Light Gray #F4F6FA
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --p1:#0F2F5C; --p2:#164081; --p3:#2050A0; --p4:#5487D1; --p5:#E7EEFA;
+  --acc:#0A7AA3; --acc-lt:#7FC9F0; --mint:#6FD39A; --mint-lt:#E7F5EE; --white:#fff;
+  --text:#0B1220; --g-d:#26303F; --g-m:#59637A; --g-l:#E4E7EE; --g-ul:#F4F6FA;
+  --warm:#E8862B; --plum:#B03090; --cta:#0E2E5B; --nav-ink:#172A45;
+
+  --line:rgba(15,47,92,.14);
+  --line-lt:rgba(255,255,255,.24);
+  --r-lg:32px; --r-md:22px; --r-sm:14px;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --accent-font:'Fraunces',Georgia,serif;
+  --body:'Open Sans',system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px); --gap:clamp(14px,1.6vw,22px);
+  --navh:116px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--g-d);font-family:var(--body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+input{font:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--pad)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:.99;margin:0;color:var(--p1)}
+.it{font-family:var(--accent-font);font-style:italic;font-weight:300;letter-spacing:-.02em}
+.lede{font-size:clamp(16px,1.3vw,19px);color:var(--g-m);max-width:56ch;line-height:1.65;font-weight:300}
+.n{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g-m)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 15px 8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--p5);color:var(--p1)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc)}
+.on-dark .eyebrow{border-color:var(--line-lt);background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(6px)}
+.on-dark .eyebrow::before{background:var(--mint)}
+.on-dark h1,.on-dark h2,.on-dark h3,.on-dark h4{color:#fff}
+.on-dark .lede{color:#C5D4E6}
+.on-dark .n{color:rgba(255,255,255,.72)}
+
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--p1),var(--p3))}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* keep heads in frame on people photography */
+.face-safe{object-position:center 18% !important}
+
+/* ── Buttons ───────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:13px 17px 13px 24px;border-radius:999px;font-weight:600;font-size:15.5px;
+  background:var(--p1);color:#fff;transition:transform .28s cubic-bezier(.2,.8,.3,1),background .28s}
+.btn .dot{width:30px;height:30px;flex:none;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;transition:transform .28s cubic-bezier(.2,.8,.3,1)}
+.btn:hover{transform:translateY(-2px);background:var(--p3)}
+.btn:hover .dot{transform:translateX(3px) rotate(45deg)}
+.btn--ghost{background:transparent;color:var(--p1);border:1.5px solid var(--line)}
+.btn--ghost .dot{background:var(--p1);color:#fff}
+.btn--ghost:hover{background:var(--p5)}
+.btn--white{background:#fff;color:var(--p1)}
+.btn--white .dot{background:var(--acc);color:#fff}
+.btn--white:hover{background:var(--p5)}
+.btn--glass{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.45);backdrop-filter:blur(8px)}
+.btn--glass .dot{background:#fff;color:var(--p1)}
+.btn--glass:hover{background:rgba(255,255,255,.26)}
+
+/* ── NAV ───────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;padding:14px 0}
+.nav-inner{display:flex;align-items:center;gap:12px;border-radius:999px;padding:9px 10px 9px 16px;
+  background:var(--white);border:1px solid var(--g-l);box-shadow:0 12px 34px -22px rgba(15,47,92,.45);
+  transition:box-shadow .35s,border-color .35s,background .35s}
+.nav.solid .nav-inner{box-shadow:0 16px 40px -20px rgba(15,47,92,.55);border-color:#D9DFE8}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.brand img{height:68px;width:auto;max-height:none}
+.lock{display:flex;flex-direction:column;line-height:1}
+.lock b{font-family:var(--display);font-size:14px;font-weight:800;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.lock span{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin-top:5px}
+.nav-links{display:flex;gap:2px;margin-left:clamp(8px,1.1vw,18px);margin-right:auto;align-items:center}
+.nav-links a{padding:10px 9px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--nav-ink);white-space:nowrap;transition:background .2s,color .2s}
+.nav-links a:hover{background:var(--p5)}
+/* the page you are on */
+.nav-links a.here{background:var(--mint);color:var(--nav-ink);font-weight:700}
+.nav-links a.here:hover{background:var(--mint);filter:brightness(1.04)}
+.nav-cta{display:flex;gap:8px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.42);display:grid;place-items:center;color:#fff;transition:all .25s}
+.icon-btn:hover{background:rgba(255,255,255,.2)}
+.nav .icon-btn{border:0;width:38px;height:38px;color:var(--nav-ink)}
+.nav .icon-btn:hover{background:var(--p5)}
+.nav .btn{padding:10px 10px 10px 18px;font-size:14.5px;background:var(--cta);color:#fff;white-space:nowrap}
+.nav .btn .dot{width:30px;height:30px;background:var(--acc);color:#fff}
+.nav .btn:hover{background:#16406F}
+.burger{display:none}
+@media(max-width:1360px){.nav-links{display:none}.burger{display:grid}.nav-cta{margin-left:auto}}
+/* 561–900px: the mark carries the brand so the CTA keeps its full label */
+/* the full logo carries the brand on the white bar */
+.nav .lock{display:none}
+/* under 560px the pill has no room for the CTA — the drawer and hero carry it instead */
+@media(max-width:900px){.nav-inner{padding:8px 10px 8px 16px}.brand img{height:60px}:root{--navh:104px}}
+@media(max-width:560px){.nav .btn{display:none}.brand img{height:54px}:root{--navh:96px}}
+
+/* ── 01 HERO with video ────────────────────── */
+.topshell{position:relative;isolation:isolate;padding-top:calc(var(--navh) + clamp(40px,7vw,110px));padding-bottom:clamp(30px,4vw,54px);overflow:hidden}
+.topshell-bg{position:absolute;inset:0;z-index:-2;background:var(--p1)}
+.topshell-bg video,.topshell-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.topshell-bg::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(115% 92% at 18% 42%, rgba(8,20,38,.86) 0%, rgba(15,47,92,.56) 52%, rgba(15,47,92,.28) 80%),
+    linear-gradient(180deg, rgba(8,20,38,.80) 0%, rgba(15,47,92,.54) 40%, rgba(8,20,38,.96) 100%)}
+.topshell-grain{position:absolute;inset:0;z-index:-1;opacity:.34;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:26px 26px}
+.hero{position:relative;z-index:4}
+.hero h1,.hero .lede{text-shadow:0 2px 18px rgba(8,20,38,.75),0 1px 3px rgba(8,20,38,.5)}
+.hero h1{font-size:clamp(42px,7.6vw,120px);letter-spacing:-.045em;margin:22px 0 0;max-width:16ch;color:#fff}
+.hero h1 .it{color:var(--mint)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:clamp(24px,4vw,60px);align-items:end;margin-top:30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-side{border:1px solid rgba(255,255,255,.3);border-radius:var(--r-md);background:rgba(255,255,255,.12);backdrop-filter:blur(10px);overflow:hidden}
+.hero-side .ph{height:150px}
+.hero-side .in{padding:20px}
+.hero-side .k{font-family:var(--display);font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-.05em;color:#fff}
+.hero-side .k span{color:var(--mint)}
+.hero-side p{margin:10px 0 0;font-size:14px;color:#C5D4E6;line-height:1.55;font-weight:300}
+.hero-side a{display:inline-flex;gap:9px;align-items:center;margin-top:16px;font-weight:600;font-size:14.5px;color:var(--mint)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:clamp(28px,3.4vw,46px)}
+.strip .ph{border-radius:var(--r-md);height:clamp(130px,14vw,190px);border:1px solid rgba(255,255,255,.24)}
+.strip .ph img{transition:transform .7s cubic-bezier(.2,.8,.3,1)}
+.strip .ph:hover img{transform:scale(1.06)}
+.strip .cap{position:absolute;left:12px;bottom:10px;z-index:2;color:#fff;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;text-shadow:0 1px 12px rgba(15,47,92,.95)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}}
+
+/* Marquee */
+.marquee{border-block:1px solid var(--g-l);padding:20px 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--g-m);margin-bottom:14px}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:slide 46s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--display);font-size:clamp(16px,1.6vw,22px);font-weight:600;letter-spacing:-.03em;color:var(--p3);white-space:nowrap;opacity:.6}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.sec{padding:clamp(52px,6.6vw,110px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(26px,3.2vw,48px)}
+.sec-head h2{font-size:clamp(32px,4.6vw,70px);max-width:15ch}
+.sec-head h2 .it{color:var(--acc)}
+.sec-head .lede{margin-top:14px}
+
+/* ── 02 AUDIENCE ───────────────────────────── */
+.paths{display:flex;gap:10px;flex-wrap:wrap}
+.path{padding:12px 21px;border-radius:999px;border:1.5px solid var(--g-l);font-weight:600;font-size:15.5px;color:var(--g-d);background:#fff;
+  transition:all .25s cubic-bezier(.2,.8,.3,1)}
+.path:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
+.path[aria-selected="true"]{background:var(--p1);border-color:var(--p1);color:#fff}
+.path-panel{margin-top:22px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--g-l);background:var(--p5);
+  display:grid;grid-template-columns:.85fr 1.15fr}
+.path-media{position:relative;min-height:320px;background:var(--p1)}
+.path-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.path-media .cop{position:absolute;inset:auto 0 0 0;z-index:2;padding:24px;background:linear-gradient(180deg,transparent,rgba(15,47,92,.95))}
+.path-media .who{font-family:var(--display);font-size:clamp(20px,2vw,29px);letter-spacing:-.035em;line-height:1.05;color:#fff}
+.path-media p{margin:10px 0 0;color:#C5D4E6;font-size:14.5px;font-weight:300}
+.path-links{padding:clamp(18px,2.2vw,28px);display:grid;gap:10px;align-content:center}
+.path-link{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:var(--r-md);background:#fff;border:1px solid transparent;transition:all .25s}
+.path-link .num{font-family:var(--display);font-size:13px;color:var(--g-m);width:22px;flex:none}
+.path-link strong{font-weight:700;font-size:16px;color:var(--p1)}
+.path-link em{display:block;font-size:13.5px;color:var(--g-m);font-style:normal;font-weight:300}
+.path-link .arrow{margin-left:auto;color:var(--acc);transition:transform .25s}
+.path-link:hover{border-color:var(--acc-lt);transform:translateX(4px)}
+.path-link:hover .arrow{transform:translateX(4px)}
+@media(max-width:860px){.path-panel{grid-template-columns:1fr}.path-media{min-height:260px}}
+
+/* ── 03 FINDER ─────────────────────────────── */
+.finder{border-radius:var(--r-lg);padding:clamp(28px,4.2vw,70px);position:relative;overflow:hidden;isolation:isolate}
+.finder-bg{position:absolute;inset:0;z-index:-2;background:var(--p2)}
+.finder-bg img{width:100%;height:100%;object-fit:cover;object-position:center 25%;mix-blend-mode:luminosity;opacity:.5}
+.finder-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(15,47,92,.95) 20%,rgba(32,80,160,.86) 100%)}
+.finder h2{font-size:clamp(29px,4.2vw,60px);max-width:14ch}
+.finder h2 .it{color:var(--mint)}
+.searchbar{margin-top:26px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:8px 8px 8px 24px;max-width:820px}
+.searchbar > svg{flex:none;color:var(--g-m)}
+.searchbar .btn .dot svg{color:#fff}
+.searchbar input{flex:1;border:0;background:none;outline:none;font-size:clamp(15px,1.4vw,18px);color:var(--p1);padding:12px 0}
+.searchbar input::placeholder{color:var(--g-m)}
+.pops{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;align-items:center}
+.pops .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--mint);margin-right:4px}
+.chip{padding:9px 16px;border-radius:999px;border:1px solid var(--line-lt);color:#fff;font-size:14px;transition:all .22s;backdrop-filter:blur(6px)}
+.chip:hover{background:var(--mint);color:var(--p1);border-color:var(--mint)}
+.finder-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line-lt);font-size:14px;color:#C5D4E6;font-weight:300}
+.finder-meta b{color:#fff;font-family:var(--display);font-size:16px}
+
+/* ── 04 PILLARS — photo panel + solid text panel (figure/ground separation) ── */
+.pillars{display:grid;gap:var(--gap);grid-template-columns:repeat(4,1fr)}
+.pillar{display:flex;flex-direction:column;border-radius:var(--r-lg);overflow:hidden;background:var(--white);
+  border:1px solid var(--g-l);transition:transform .35s cubic-bezier(.2,.8,.3,1),box-shadow .35s,border-color .35s}
+.pillar:hover{transform:translateY(-8px);box-shadow:0 24px 50px -26px rgba(8,20,38,.5);border-color:var(--g-m)}
+.pillar .pic{position:relative;height:clamp(180px,17vw,224px);overflow:hidden;background:var(--p1)}
+.pillar .pic img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .7s cubic-bezier(.2,.8,.3,1)}
+.pillar:hover .pic img{transform:scale(1.06)}
+.pillar .no{position:absolute;left:14px;top:14px;z-index:2;background:#fff;color:var(--p1);
+  padding:6px 12px;border-radius:99px;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.12em}
+.pillar .bar{height:5px;width:100%;flex:none}
+.pillar .in{padding:22px;display:flex;flex-direction:column;flex:1}
+.pillar h3{font-size:clamp(20px,1.8vw,27px);color:var(--p1)}
+.pillar p{font-size:15px;color:var(--g-d);margin:12px 0 0;font-weight:400;line-height:1.55}
+.pillar .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:20px;
+  font-weight:600;font-size:13.5px;color:var(--g-m)}
+.pillar .foot .arrow{width:38px;height:38px;border-radius:50%;background:var(--p5);color:var(--p1);
+  display:grid;place-items:center;flex:none;transition:all .35s}
+.pillar:hover .foot .arrow{background:var(--acc);color:#fff;transform:rotate(45deg)}
+[data-theme="dark"] .pillar{background:#0D2038;border-color:#2A4463}
+[data-theme="dark"] .pillar h3{color:#EEF3FA}
+[data-theme="dark"] .pillar p{color:#CDD9E8}
+[data-theme="dark"] .pillar .foot{color:#A7B7CD}
+[data-theme="dark"] .pillar .foot .arrow{background:#1A3A57;color:#fff}
+[data-theme="dark"] .pillar .no{background:#081426;color:#fff}
+@media(max-width:1080px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pillars{grid-template-columns:1fr}}
+
+/* ── 05 EVIDENCE → ACTION ──────────────────── */
+.evidence{background:var(--mint-lt);border-radius:var(--r-lg);padding:clamp(30px,4vw,64px) clamp(18px,3vw,48px)}
+.track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);align-items:start}
+.track::before{content:"";position:absolute;left:6%;right:6%;top:52px;height:2px;
+  background-image:linear-gradient(90deg,rgba(15,47,92,.22) 0 12px,transparent 12px 22px);background-size:22px 2px}
+.stage{position:relative;text-align:left;display:flex;flex-direction:column}
+.stage .bulb{width:104px;height:104px;border-radius:50%;overflow:hidden;position:relative;z-index:2;border:3px solid #fff;background:var(--p1);
+  transition:all .4s cubic-bezier(.2,.8,.3,1);flex:none}
+.stage .bulb img{width:100%;height:100%;object-fit:cover;object-position:center 18%;mix-blend-mode:luminosity;opacity:.7;transition:opacity .4s}
+.stage .bulb::after{content:"";position:absolute;inset:0;background:rgba(15,47,92,.42);transition:background .4s}
+.stage[aria-selected="true"] .bulb{border-color:var(--acc);transform:scale(1.06)}
+.stage[aria-selected="true"] .bulb img{opacity:1;mix-blend-mode:normal}
+.stage[aria-selected="true"] .bulb::after{background:transparent}
+.stage:hover .bulb{border-color:var(--acc-lt)}
+.stage h4{font-size:clamp(18px,1.6vw,24px);margin-top:18px;line-height:1.05}
+.stage p{font-size:14.5px;color:var(--g-m);margin:10px 0 0;font-weight:300;line-height:1.5;max-width:30ch;text-wrap:pretty}
+.stage .tick{font-family:var(--display);font-size:11.5px;letter-spacing:.14em;color:var(--g-m);margin-bottom:12px;display:block}
+.case{margin-top:clamp(26px,3vw,44px);border-radius:var(--r-lg);overflow:hidden;background:#fff;
+  display:grid;grid-template-columns:.44fr 1.56fr}
+.case-tag{position:relative;isolation:isolate;padding:clamp(22px,2.6vw,34px);color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:280px}
+.case-tag .bg{position:absolute;inset:0;z-index:-2;background:var(--p1)}
+.case-tag .bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;mix-blend-mode:luminosity;opacity:.45}
+.case-tag::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(32,80,160,.6),rgba(15,47,92,.96))}
+.case-tag .p{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mint)}
+.case-tag h3{font-size:clamp(23px,2.3vw,34px);margin-top:10px;color:#fff}
+.case-tag .prog{display:flex;gap:6px}
+.case-tag .prog i{height:4px;flex:1;border-radius:99px;background:rgba(255,255,255,.26)}
+.case-tag .prog i.on{background:var(--mint)}
+.case-body{padding:clamp(22px,2.8vw,40px)}
+.case-body .quote{font-family:var(--display);font-size:clamp(19px,2.2vw,32px);letter-spacing:-.035em;line-height:1.14;max-width:24ch;color:var(--p1);margin:0}
+.case-body .detail{margin-top:18px;color:var(--g-m);font-size:15px;max-width:56ch;font-weight:300}
+.case-body .metrics{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px dashed var(--g-l)}
+.case-body .metrics div b{display:block;font-family:var(--display);font-size:clamp(23px,2.3vw,33px);letter-spacing:-.04em;color:var(--acc)}
+.case-body .metrics div span{font-size:13px;color:var(--g-m)}
+@media(max-width:980px){.track{grid-template-columns:repeat(2,1fr);gap:32px}.track::before{display:none}.case{grid-template-columns:1fr}.stage p{max-width:none}}
+@media(max-width:520px){.track{grid-template-columns:1fr}}
+
+/* ── 06 INITIATIVES ────────────────────────── */
+.inits{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gap)}
+.init{grid-column:span 2;border-radius:var(--r-lg);overflow:hidden;background:var(--g-ul);border:1px solid var(--g-l);display:flex;flex-direction:column;
+  min-height:250px;transition:transform .3s cubic-bezier(.2,.8,.3,1),box-shadow .3s}
+.init:hover{transform:translateY(-6px);box-shadow:0 20px 44px -24px rgba(15,47,92,.55)}
+.init.wide{grid-column:span 3}
+.init .pic{height:clamp(150px,14vw,196px)}
+.init .pic img{transition:transform .7s cubic-bezier(.2,.8,.3,1);object-position:center 22%}
+.init:hover .pic img{transform:scale(1.06)}
+.init .pic .tag{position:absolute;z-index:2;left:14px;top:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 11px;border-radius:99px;color:#fff}
+.init .in{padding:22px;display:flex;flex-direction:column;flex:1}
+.init h3{font-size:clamp(20px,1.8vw,27px)}
+.init p{font-size:14px;color:var(--g-m);margin:9px 0 0;font-weight:300}
+.init .go{display:inline-flex;align-items:center;gap:9px;margin-top:auto;padding-top:18px;font-weight:600;font-size:14.5px;color:var(--acc)}
+.init .go .arrow{transition:transform .3s}
+.init:hover .go .arrow{transform:translateX(5px)}
+.init.feature{background:var(--p1);border-color:var(--p1)}
+.init.feature h3{color:#fff}.init.feature p{color:#C5D4E6}.init.feature .go{color:var(--mint)}
+.init.accent{background:var(--acc);border-color:var(--acc)}
+.init.accent h3{color:#fff}.init.accent p{color:#E4F3FA}.init.accent .go{color:#fff}
+@media(max-width:1080px){.inits{grid-template-columns:repeat(4,1fr)}.init.wide{grid-column:span 2}}
+@media(max-width:680px){.inits{grid-template-columns:1fr}.init,.init.wide{grid-column:span 1}}
+
+/* ── 07 IMPACT ─────────────────────────────── */
+.impact{position:relative;isolation:isolate;color:#fff;padding:clamp(52px,6.6vw,110px) 0}
+.impact-bg{position:absolute;inset:0;z-index:-2;background:var(--p1)}
+.impact-bg img{width:100%;height:100%;object-fit:cover;opacity:.24;mix-blend-mode:luminosity}
+.impact-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(15,47,92,.95),rgba(22,64,129,.94))}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-lt);margin-top:clamp(22px,3vw,38px)}
+.stat{padding:clamp(24px,2.6vw,38px) clamp(16px,2vw,28px);border-right:1px solid var(--line-lt);border-bottom:1px solid var(--line-lt)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-size:clamp(44px,5.6vw,86px);letter-spacing:-.055em;line-height:.9;color:#fff;font-variant-numeric:tabular-nums}
+.stat b .suf{font-size:.45em;vertical-align:super;color:var(--mint)}
+.stat.spin b{color:var(--acc-lt)}
+.stat span{display:block;margin-top:14px;font-size:14.5px;color:#C5D4E6;max-width:22ch;font-weight:300}
+/* non-numeric impact statements: same slot, readable weight */
+.stat.word b{font-size:clamp(23px,2.5vw,34px);letter-spacing:-.03em;line-height:1.04;max-width:13ch}
+.stat.word b i{font-style:normal;color:var(--mint);display:block}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,50px);align-items:center;padding-top:clamp(30px,4vw,58px)}
+.story blockquote{margin:0;font-family:var(--display);font-size:clamp(23px,3vw,44px);letter-spacing:-.04em;line-height:1.1;color:#fff}
+.story blockquote .it{color:var(--mint)}
+.story .who{display:flex;align-items:center;gap:14px;margin-top:26px}
+.story .who .av{width:58px;height:58px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--mint)}
+.story .who .av img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.story .who p{margin:0;font-size:14.5px;color:#C5D4E6;font-weight:300}
+.story .who p b{display:block;color:#fff;font-size:16px;font-weight:700}
+.story-media{border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:clamp(260px,28vw,360px)}
+.story-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story-media figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 20px;font-size:13px;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(15,47,92,.95));font-weight:300}
+@media(max-width:1080px){.impact-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+@media(max-width:520px){.impact-grid{grid-template-columns:1fr}.stat{border-right:0}}
+
+/* ── 08 PEOPLE ─────────────────────────────── */
+.people{background:var(--p5)}
+.people-rail{display:flex;gap:var(--gap);overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.people-rail::-webkit-scrollbar{display:none}
+.person{flex:0 0 clamp(228px,23vw,300px);scroll-snap-align:start;border-radius:var(--r-lg);overflow:hidden;position:relative;
+  min-height:clamp(330px,32vw,420px);display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;
+  transition:transform .35s cubic-bezier(.2,.8,.3,1)}
+.person .bg{position:absolute;inset:0;z-index:-2;background:var(--p1)}
+.person .bg img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .8s cubic-bezier(.2,.8,.3,1)}
+.person::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,47,92,0) 40%,rgba(15,47,92,.95) 100%)}
+.person:hover{transform:translateY(-6px)}
+.person:hover .bg img{transform:scale(1.05)}
+.person .in{padding:20px;color:#fff}
+.person h4{font-size:19px;color:#fff}
+.person p{margin:5px 0 0;font-size:13.5px;color:#C5D4E6;font-weight:300}
+.person .badge{display:inline-block;margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 10px;border-radius:99px;background:var(--mint);color:var(--p1)}
+.rail-nav{display:flex;gap:8px}
+.rail-nav .icon-btn{border-color:rgba(15,47,92,.2);color:var(--p1)}
+.rail-nav .icon-btn:hover{background:#fff}
+
+/* ── 09 INSIGHTS ───────────────────────────── */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.post{border-radius:var(--r-lg);border:1px solid var(--g-l);background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.8,.3,1)}
+.post:hover{transform:translateY(-6px)}
+.post .thumb{height:clamp(170px,17vw,215px)}
+.post .thumb img{transition:transform .7s cubic-bezier(.2,.8,.3,1);object-position:center 25%}
+.post:hover .thumb img{transform:scale(1.06)}
+.post .thumb .kicker{position:absolute;z-index:3;left:14px;bottom:14px;padding:7px 13px;border-radius:99px;color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.post .body{padding:22px;display:flex;flex-direction:column;flex:1}
+.post time{font-size:13px;color:var(--g-m);font-weight:600}
+.post h3{font-size:clamp(18px,1.5vw,23px);margin-top:10px;line-height:1.12}
+.post .go{margin-top:auto;padding-top:20px;font-weight:600;font-size:14.5px;display:inline-flex;gap:9px;align-items:center;color:var(--acc)}
+.post .go .arrow{transition:transform .3s}
+.post:hover .go .arrow{transform:translateX(5px)}
+@media(max-width:980px){.posts{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.posts{grid-template-columns:1fr}}
+
+/* ── 10 PRESS ──────────────────────────────── */
+.press{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.press-card{border-radius:var(--r-lg);padding:clamp(24px,3vw,46px);display:flex;flex-direction:column;justify-content:space-between;
+  min-height:340px;position:relative;overflow:hidden;isolation:isolate}
+.press-card.a{color:#fff}
+.press-card.a .bg{position:absolute;inset:0;z-index:-2;background:var(--acc)}
+.press-card.a .bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;mix-blend-mode:luminosity;opacity:.42}
+.press-card.a::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(125deg,rgba(10,122,163,.92) 15%,rgba(15,47,92,.92) 100%)}
+.press-card.a h3,.press-card.a p{color:#fff}
+.press-card.a .n{color:rgba(255,255,255,.86)}
+.press-card.b{background:var(--mint-lt);border:1px solid var(--g-l)}
+.press-card h3{font-size:clamp(25px,2.7vw,40px);max-width:16ch}
+.press-card p{font-size:15px;margin:14px 0 0;max-width:44ch;font-weight:300;color:var(--g-m)}
+.press-card .btn{align-self:flex-start;margin-top:28px}
+.quicklinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.quicklinks a{padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);background:rgba(255,255,255,.6);
+  font-size:14px;font-weight:600;color:var(--p1);transition:all .22s}
+.quicklinks a:hover{border-color:var(--p1);background:#fff;transform:translateY(-1px)}
+[data-theme="dark"] .quicklinks a{background:rgba(255,255,255,.07);color:#E6EDF7;border-color:rgba(255,255,255,.28)}
+.expert-strip{display:flex;margin-top:24px}
+.expert-strip .av{width:52px;height:52px;border-radius:50%;border:3px solid var(--mint-lt);margin-right:-14px;overflow:hidden;background:var(--p1)}
+.expert-strip .av img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.expert-strip .more{width:52px;height:52px;border-radius:50%;border:3px solid var(--mint-lt);background:var(--p1);color:#fff;
+  display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:13px}
+@media(max-width:820px){.press{grid-template-columns:1fr}}
+
+/* ── 11 NEWSLETTER ─────────────────────────── */
+.news{border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr;background:var(--mint-lt)}
+.news .in{padding:clamp(26px,3.6vw,58px)}
+.news h2{font-size:clamp(28px,3.6vw,54px);max-width:15ch;color:var(--p1)}
+.news h2 .it{color:var(--acc)}
+.news .lede{color:var(--p2);margin-top:14px}
+.news .n{color:var(--g-m)}
+.news-media{position:relative;min-height:300px;background:var(--p1)}
+.news-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.news-form{margin-top:26px;max-width:640px}
+.interests{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.int{padding:10px 17px;border-radius:999px;border:1.5px solid rgba(15,47,92,.24);font-size:14px;font-weight:600;transition:all .22s;color:var(--p1);background:rgba(255,255,255,.6)}
+.int[aria-pressed="true"]{background:var(--p1);color:#fff;border-color:var(--p1)}
+.int:hover{border-color:var(--p1)}
+.news-row{display:flex;gap:10px;background:#fff;border-radius:999px;padding:8px 8px 8px 22px;align-items:center;flex-wrap:wrap}
+.news-row input{flex:1;min-width:170px;border:0;background:none;outline:none;padding:13px 0;font-size:16px;color:var(--p1)}
+.news-note{margin-top:14px;font-size:13px;color:var(--g-m)}
+.news-ok{display:none;margin-top:16px;font-weight:700;color:var(--p1)}
+@media(max-width:860px){.news{grid-template-columns:1fr}.news-media{min-height:220px;order:-1}}
+
+/* ── 12 FOOTER ─────────────────────────────── */
+footer{position:relative;isolation:isolate;color:#fff;margin-top:clamp(48px,6vw,88px);border-radius:var(--r-lg) var(--r-lg) 0 0;
+  padding:clamp(40px,5vw,82px) 0 24px;overflow:hidden;background:var(--p1)}
+.foot-art{position:absolute;inset:0;z-index:-1;width:100%;height:100%;opacity:.5;pointer-events:none}
+.foot-lead{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,3vw,40px);flex-wrap:wrap;
+  padding-bottom:clamp(26px,3.4vw,42px);margin-bottom:clamp(26px,3.4vw,42px);border-bottom:1px solid var(--line-lt)}
+.foot-lead .who{display:flex;align-items:center;gap:clamp(18px,2.4vw,30px);flex-wrap:wrap}
+.foot-top{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2.2vw,30px)}
+.foot-brand .logo-chip{display:inline-flex;background:#fff;border-radius:24px;padding:14px 20px}
+.foot-brand img{height:104px;width:auto}
+.foot-brand p{color:#C5D4E6;font-size:14.5px;margin:0;max-width:40ch;font-weight:300}
+.foot-brand address{font-style:normal;color:#C5D4E6;font-size:14px;margin-top:20px;line-height:1.75;font-weight:300}
+.foot-brand address a{color:var(--mint)}
+.foot-col h5{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin:0 0 16px;font-weight:700}
+.foot-col ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.foot-col a{font-size:14.5px;color:#fff;opacity:.86;transition:opacity .2s,color .2s}
+.foot-col a:hover{opacity:1;color:var(--mint)}
+.foot-bottom{margin-top:clamp(32px,4vw,58px);padding-top:24px;border-top:1px solid var(--line-lt);display:flex;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;align-items:center;font-size:13.5px;color:#C5D4E6}
+.socials{display:flex;gap:8px}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-lt);display:grid;place-items:center;transition:all .22s}
+.socials a:hover{background:var(--mint);color:var(--p1);border-color:var(--mint)}
+.foot-legal{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+/* Giant wordmark, edge to edge of the grid */
+.wordmark{margin-top:clamp(26px,3.4vw,52px)}
+.wordmark svg{width:100%;height:auto;display:block;overflow:visible}
+.wordmark text{font-family:var(--display);font-weight:800;fill:#fff;opacity:.13;letter-spacing:-.04em}
+@media(max-width:1180px){.foot-top{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.foot-lead .btn{width:100%;justify-content:center}}
+@media(max-width:980px){.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-top{grid-template-columns:1fr}}
+
+.credit{font-size:12px;color:var(--g-m);text-align:center;padding:22px var(--pad) 0}
+
+/* ══════════ DITHER SCENE + TOP LINE ART ══════════ */
+.top-art{position:absolute;inset:0;z-index:-1;width:100%;height:100%;opacity:.55;pointer-events:none}
+.dither{position:absolute;left:0;right:0;bottom:-1px;z-index:-1;width:100%;height:min(62%,520px);pointer-events:none;
+  opacity:.62;will-change:transform}
+.dither svg{width:100%;height:100%;display:block}
+.dither-2{position:absolute;right:-4%;top:calc(var(--navh) - 20px);width:min(46%,620px);height:auto;z-index:-1;
+  opacity:.30;pointer-events:none;transform:scaleX(-1)}
+@media(max-width:820px){.dither-2{display:none}.dither{height:44%;opacity:.5}}
+
+/* drawn pulse line */
+.drawline{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 6s cubic-bezier(.4,0,.2,1) .6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.flicker{animation:flick 5.5s ease-in-out infinite}
+@keyframes flick{0%,100%{opacity:.25}50%{opacity:.8}}
+.drift{animation:drift 22s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ══════════ MICRO ELEMENTS ══════════ */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
+  background:linear-gradient(90deg,var(--mint),var(--acc-lt),var(--acc));transition:width .12s linear}
+
+.livepill{display:inline-flex;align-items:center;gap:9px;padding:7px 15px 7px 12px;border-radius:999px;
+  border:1px solid rgba(111,211,154,.45);background:rgba(111,211,154,.12);backdrop-filter:blur(6px);
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
+.livepill i{width:8px;height:8px;border-radius:50%;background:var(--mint);position:relative;flex:none}
+.livepill i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--mint);
+  animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{0%{transform:scale(.5);opacity:.9}80%,100%{transform:scale(1.5);opacity:0}}
+
+.floaters{position:absolute;inset:0;pointer-events:none;z-index:3}
+.floater{position:absolute;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:999px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.30);backdrop-filter:blur(10px);
+  font-size:13px;font-weight:600;color:#fff;white-space:nowrap;box-shadow:0 12px 30px -18px rgba(0,0,0,.7)}
+.floater b{font-family:var(--display);font-size:15px;letter-spacing:-.02em}
+.floater .kk{width:7px;height:7px;border-radius:50%;flex:none}
+.floater.f1{top:16%;right:6%;animation:bob 7s ease-in-out infinite}
+.floater.f2{top:44%;right:15%;animation:bob 9s ease-in-out .8s infinite}
+.floater.f3{top:70%;right:3%;animation:bob 8s ease-in-out .4s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:1180px){.floaters{display:none}}
+
+/* heading underline draws in on reveal */
+.uline{position:relative;display:inline-block}
+.uline::after{content:"";position:absolute;left:0;bottom:-.12em;height:5px;width:100%;border-radius:99px;
+  background:linear-gradient(90deg,var(--mint),var(--acc-lt));transform:scaleX(0);transform-origin:left;
+  transition:transform .9s cubic-bezier(.2,.8,.3,1) .2s}
+.rise.in .uline::after{transform:scaleX(1)}
+
+/* animated connector on the evidence track */
+.track::before{animation:flow 1.4s linear infinite}
+@keyframes flow{to{background-position:22px 0}}
+
+/* secondary-colour accents */
+.sec-tint{background:var(--g-ul)}
+.init::before{content:"";display:block;height:4px;background:var(--mint)}
+.init.feature::before{background:var(--acc-lt)}
+.init.accent::before{background:var(--mint)}
+.init:nth-child(3n)::before{background:var(--acc-lt)}
+.init:nth-child(3n+1)::before{background:var(--mint)}
+.marquee-track span:nth-child(even){color:var(--acc)}
+.stat:nth-child(even) b .suf{color:var(--acc-lt)}
+.chip:nth-child(even):hover{background:var(--acc-lt);color:var(--p1);border-color:var(--acc-lt)}
+.path-link:nth-child(2) .arrow{color:var(--p4)}
+.path-link:nth-child(3) .arrow{color:var(--mint);filter:brightness(.85)}
+.mint-rule{height:4px;width:100%;border-radius:99px;margin-top:clamp(30px,4vw,52px);
+  background:linear-gradient(90deg,var(--mint),var(--acc-lt) 45%,var(--p5) 80%,transparent)}
+
+.rise{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.3,1),transform .7s cubic-bezier(.2,.8,.3,1)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rise{opacity:1;transform:none}
+}
+
+/* ══════════ FOOTER ART — very slow drift ══════════ */
+.fa-rings{transform-box:fill-box;transform-origin:center;animation:faBreathe 90s ease-in-out infinite}
+@keyframes faBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.fa-pulse{stroke-dasharray:14 10;animation:faTrace 120s linear infinite}
+@keyframes faTrace{to{stroke-dashoffset:-2400}}
+.fa-net{stroke-dasharray:6 8;animation:faTrace2 150s linear infinite;opacity:.9}
+@keyframes faTrace2{to{stroke-dashoffset:-900}}
+.fa-nodes circle{animation:faGlow 26s ease-in-out infinite}
+.fa-nodes circle:nth-child(2){animation-delay:-5s}
+.fa-nodes circle:nth-child(3){animation-delay:-10s}
+.fa-nodes circle:nth-child(4){animation-delay:-15s}
+.fa-nodes circle:nth-child(5){animation-delay:-20s}
+.fa-nodes circle:nth-child(6){animation-delay:-8s}
+.fa-nodes circle:nth-child(7){animation-delay:-18s}
+@keyframes faGlow{0%,100%{opacity:.25}50%{opacity:1}}
+.fa-bars{animation:faRise 70s ease-in-out infinite}
+@keyframes faRise{0%,100%{transform:translateY(6px)}50%{transform:translateY(-6px)}}
+
+/* ══════════ SKIP LINK ══════════ */
+.skip{position:fixed;left:12px;top:-100px;z-index:200;background:var(--p1);color:#fff;padding:13px 20px;border-radius:12px;
+  font-weight:700;font-size:15px;border:2px solid var(--mint);transition:top .2s}
+.skip:focus{top:12px}
+
+/* ══════════ THEME TOGGLE ══════════ */
+.theme-btn svg{width:19px;height:19px}
+.theme-btn .moon{display:none}
+[data-theme="dark"] .theme-btn .moon{display:block}
+[data-theme="dark"] .theme-btn .sun{display:none}
+
+/* ══════════ DARK THEME ══════════ */
+[data-theme="dark"]{--p5:#16304C;--g-ul:#0D2038;--g-l:#2A4463;--g-m:#A7B7CD;--g-d:#E6EDF7;--mint-lt:#102437;
+  --line:rgba(255,255,255,.18);color-scheme:dark}
+[data-theme="dark"] body{background:#081426;color:#E6EDF7}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4{color:#EEF3FA}
+[data-theme="dark"] .lede{color:#BDCBDE}
+[data-theme="dark"] .sec-tint{background:#0B1B30}
+[data-theme="dark"] .post,[data-theme="dark"] .case{background:#10263F;border-color:#2A4463}
+[data-theme="dark"] .path{background:#10263F;border-color:#2A4463;color:#E6EDF7}
+[data-theme="dark"] .path:hover{border-color:var(--mint);color:var(--mint)}
+[data-theme="dark"] .path[aria-selected="true"]{background:var(--mint);border-color:var(--mint);color:#081426}
+[data-theme="dark"] .path-panel{background:#0D2038;border-color:#2A4463}
+[data-theme="dark"] .path-link{background:#16304C}
+[data-theme="dark"] .path-link strong{color:#EEF3FA}
+[data-theme="dark"] .path-link em{color:#BDCBDE}
+[data-theme="dark"] .path-link .arrow{color:var(--mint)}
+[data-theme="dark"] .init{background:#0D2038;border-color:#2A4463}
+[data-theme="dark"] .init .tag{color:#fff}
+[data-theme="dark"] .init .go{color:var(--acc-lt)}
+[data-theme="dark"] .evidence{background:#0B1B30}
+[data-theme="dark"] .stage .bulb{border-color:#2A4463}
+[data-theme="dark"] .case-body .quote{color:#EEF3FA}
+[data-theme="dark"] .case-body .metrics div b{color:var(--acc-lt)}
+[data-theme="dark"] .searchbar{background:#16304C}
+[data-theme="dark"] .searchbar input{color:#fff}
+[data-theme="dark"] .searchbar input::placeholder{color:#95A6BD}
+[data-theme="dark"] .news{background:#0D2038}
+[data-theme="dark"] .news h2{color:#EEF3FA}
+[data-theme="dark"] .news .lede,[data-theme="dark"] .news-note{color:#BDCBDE}
+[data-theme="dark"] .news-row{background:#16304C}
+[data-theme="dark"] .news-row input{color:#fff}
+[data-theme="dark"] .int{background:rgba(255,255,255,.07);color:#E6EDF7;border-color:rgba(255,255,255,.3)}
+[data-theme="dark"] .int[aria-pressed="true"]{background:var(--mint);color:#081426;border-color:var(--mint)}
+[data-theme="dark"] .news-ok{color:var(--mint)}
+[data-theme="dark"] .press-card.b{background:#0D2038;border-color:#2A4463}
+[data-theme="dark"] .expert-strip .av,[data-theme="dark"] .expert-strip .more{border-color:#0D2038}
+[data-theme="dark"] .people{background:#0B1B30}
+[data-theme="dark"] .btn{background:var(--acc)}
+[data-theme="dark"] .btn:hover{background:var(--p4)}
+[data-theme="dark"] .btn--ghost{background:transparent;color:#E6EDF7;border-color:rgba(255,255,255,.32)}
+[data-theme="dark"] .btn--ghost .dot{background:var(--mint);color:#081426}
+[data-theme="dark"] .btn--ghost:hover{background:rgba(255,255,255,.08)}
+[data-theme="dark"] .eyebrow{background:#16304C;color:#E6EDF7;border-color:#2A4463}
+[data-theme="dark"] .marquee{border-color:#2A4463}
+[data-theme="dark"] .marquee-track span{color:#BDCBDE}
+[data-theme="dark"] .marquee-track span:nth-child(even){color:var(--acc-lt)}
+[data-theme="dark"] .post time,[data-theme="dark"] .n{color:#A7B7CD}
+[data-theme="dark"] .nav-inner{background:#0D2038;border-color:#2A4463;box-shadow:0 14px 38px -22px rgba(0,0,0,.75)}
+[data-theme="dark"] .nav.solid .nav-inner{border-color:#2A4463}
+[data-theme="dark"] .nav-links a{color:#E6EDF7}
+[data-theme="dark"] .nav-links a:hover{background:rgba(255,255,255,.10);color:#fff}
+[data-theme="dark"] .nav-links a.here,[data-theme="dark"] .nav-links a.here:hover{background:var(--mint);color:var(--nav-ink)}
+[data-theme="dark"] .nav .icon-btn{color:#E6EDF7}
+[data-theme="dark"] .nav .icon-btn:hover{background:rgba(255,255,255,.10)}
+[data-theme="dark"] .nav .btn{background:var(--cta)}
+[data-theme="dark"] .nav .btn:hover{background:#16406F}
+/* the logo is drawn for light ground — give it one when the bar goes dark */
+[data-theme="dark"] .nav .brand img{background:#fff;border-radius:14px;padding:5px 9px}
+[data-theme="dark"] .rail-nav .icon-btn{border-color:rgba(255,255,255,.3);color:#E6EDF7}
+[data-theme="dark"] .rail-nav .icon-btn:hover{background:rgba(255,255,255,.1)}
+[data-theme="dark"] .credit{color:#8B9CB5}
+[data-theme="dark"] #a11y-panel{background:#10263F;color:#E6EDF7;border-color:#2A4463}
+[data-theme="dark"] .a11y-row{border-color:#2A4463}
+[data-theme="dark"] :focus-visible{outline-color:var(--mint)}
+
+/* ══════════ ACCESSIBILITY TOOLS ══════════ */
+#a11y-fab{position:fixed;right:20px;bottom:20px;z-index:140;width:58px;height:58px;border-radius:50%;
+  background:var(--p1);color:#fff;display:grid;place-items:center;border:2px solid #fff;
+  box-shadow:0 12px 34px rgba(8,20,38,.42);transition:transform .25s,background .25s}
+#a11y-fab:hover{transform:scale(1.06);background:var(--acc)}
+#a11y-fab svg{width:30px;height:30px}
+#a11y-panel{position:fixed;right:20px;bottom:90px;z-index:140;width:min(330px,calc(100vw - 40px));
+  max-height:min(76vh,620px);overflow:auto;background:#fff;color:var(--g-d);border:1px solid var(--g-l);
+  border-radius:22px;padding:18px;box-shadow:0 26px 70px rgba(8,20,38,.30)}
+#a11y-panel[hidden]{display:none}
+#a11y-panel h2{font-size:19px;margin-bottom:4px}
+#a11y-panel .sub{font-size:13px;color:var(--g-m);margin:0 0 14px}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid var(--g-l);font-size:14.5px;font-weight:600}
+.a11y-row span small{display:block;font-weight:400;font-size:12.5px;color:var(--g-m);margin-top:2px}
+.sw{width:50px;height:28px;border-radius:99px;background:var(--g-l);position:relative;flex:none;transition:background .22s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.3);transition:transform .22s}
+[aria-pressed="true"] .sw{background:var(--acc)}
+[aria-pressed="true"] .sw::after{transform:translateX(22px)}
+.a11y-read{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.a11y-read button{flex:1;min-width:84px;padding:11px 12px;border-radius:12px;background:var(--p1);color:#fff;font-weight:650;font-size:13.5px}
+.a11y-read button:hover{background:var(--acc)}
+.a11y-read button[disabled]{opacity:.45;cursor:not-allowed}
+#a11y-reset{margin-top:14px;width:100%;padding:11px;border-radius:12px;border:1.5px solid var(--g-l);font-weight:650;font-size:13.5px}
+#a11y-reset:hover{background:var(--g-ul)}
+#speakStatus{font-size:12.5px;color:var(--g-m);margin-top:8px}
+
+/* grayscale — applied per-branch so fixed positioning still works */
+[data-bw="on"] main,[data-bw="on"] footer,[data-bw="on"] .credit,
+[data-bw="on"] .nav-inner,[data-bw="on"] #progress,[data-bw="on"] #a11y-fab{filter:grayscale(1)}
+/* larger text */
+[data-bigtext="on"]{font-size:118.75%}
+/* always-underline links */
+[data-ulinks="on"] main a,[data-ulinks="on"] footer a{text-decoration:underline;text-underline-offset:3px}
+/* boosted contrast */
+[data-contrast="on"]{--g-m:#38455B;--line:rgba(8,20,38,.4)}
+[data-contrast="on"] .pillar .bg img,[data-contrast="on"] .case-tag .bg img,
+[data-contrast="on"] .finder-bg img,[data-contrast="on"] .impact-bg img{opacity:.2}
+[data-contrast="on"] .pillar .in{background:linear-gradient(180deg,rgba(8,20,38,.2),rgba(8,20,38,.94) 30%)}
+[data-contrast="on"] .topshell-bg::after{background:rgba(8,20,38,.94)}
+[data-contrast="on"] .dither,[data-contrast="on"] .dither-2,[data-contrast="on"] .top-art,[data-contrast="on"] .floaters{opacity:.16}
+[data-contrast="on"] .post,[data-contrast="on"] .init,[data-contrast="on"] .path{border-width:2px}
+[data-contrast="on"] a:focus-visible,[data-contrast="on"] button:focus-visible{outline-width:4px}
+[data-theme="dark"][data-contrast="on"]{--g-m:#CDD9E8}
+/* motion off */
+[data-motion="off"] *,[data-motion="off"] *::before,[data-motion="off"] *::after{
+  animation:none!important;transition:none!important;scroll-behavior:auto!important}
+/* currently-spoken block */
+.speaking{outline:3px dashed var(--acc);outline-offset:6px;border-radius:8px}
+
+/* ══════════ FOOTER — designed by ══════════ */
+.designed-by{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-top:26px;padding-top:22px;
+  border-top:1px solid var(--line-lt)}
+.designed-by .lbl{font-size:14px;line-height:1.2;text-align:right;color:#BDCBDE;font-weight:600}
+.designed-by img{height:42px;width:auto}
+@media(max-width:560px){.designed-by{justify-content:flex-start}.designed-by img{height:34px}}
+
+/* speech controls */
+.a11y-field{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;font-size:13.5px;font-weight:600}
+.a11y-field select{flex:1;max-width:190px;padding:8px 10px;border-radius:10px;border:1.5px solid var(--g-l);
+  background:var(--white);color:var(--g-d);font-size:13.5px}
+[data-theme="dark"] .a11y-field select{background:#16304C;color:#E6EDF7;border-color:#2A4463}
+
+/* ══════════ GESTALT + HEURISTICS ══════════ */
+/* similarity: every forward link reads the same way */
+.go,.path-link,.init .go,.post .go{font-variant-numeric:tabular-nums}
+/* proximity: label sits with its heading, headings breathe away from the next group */
+.sec-head .n{display:block;margin-bottom:6px}
+.sec-head > div{max-width:62ch}
+/* common region: the finder gets a help affordance */
+.finder-help{margin-top:14px;font-size:14px;color:#D8E7F3}
+.finder-help a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+/* homepage only for now: "Home" is the fixed selected item; keep anchored sections clear of the fixed header */
+main,section[id]{scroll-margin-top:calc(var(--navh) + 12px)}
+/* user control: motion + back to top */
+.hero-controls{display:flex;gap:10px;align-items:center;margin-top:22px;flex-wrap:wrap}
+.ctrl{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;font-size:13.5px;font-weight:600;
+  color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(8px);transition:background .22s}
+.ctrl:hover{background:rgba(255,255,255,.26)}
+.ctrl svg{width:14px;height:14px}
+#toTop{position:fixed;right:20px;bottom:88px;z-index:135;width:48px;height:48px;border-radius:50%;
+  background:var(--white);color:var(--p1);border:1.5px solid var(--g-l);display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(8,20,38,.22);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+[data-theme="dark"] #toTop{background:#10263F;color:#fff;border-color:#2A4463}
+#a11y-panel:not([hidden]) ~ #toTop{bottom:auto;display:none}
+/* error prevention + recovery */
+.field-error{display:none;margin-top:10px;font-size:13.5px;font-weight:600;color:#B3261E;
+  display:none;align-items:center;gap:8px}
+.field-error[data-show="true"]{display:flex}
+[data-theme="dark"] .field-error{color:#FFB4AB}
+.news-row[data-invalid="true"]{outline:2px solid #B3261E;outline-offset:2px}
+/* panel close affordance */
+#a11y-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--g-l);color:var(--g-d)}
+#a11y-close:hover{background:var(--g-ul)}
+#a11y-panel{position:fixed}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE LAYER — everything below is scoped to small screens
+   Desktop rendering is untouched.
+   ══════════════════════════════════════════════════════════ */
+
+/* comfortable hit targets on any touch device */
+@media (hover:none){
+  .chip,.int,.path,.nav-links a,.foot-col a,.foot-legal a{min-height:44px;display:inline-flex;align-items:center}
+  .icon-btn{width:46px;height:46px}
+  .btn{padding:15px 18px 15px 24px}
+}
+
+/* ── mobile drawer ── */
+.mnav{position:fixed;inset:0;z-index:150}
+.mnav[hidden]{display:none}
+.mnav-scrim{position:absolute;inset:0;background:rgba(8,20,38,.62);backdrop-filter:blur(3px);opacity:0;transition:opacity .3s}
+.mnav[data-open="true"] .mnav-scrim{opacity:1}
+.mnav-panel{position:absolute;right:0;top:0;bottom:0;width:min(360px,88vw);background:var(--p1);color:#fff;
+  padding:18px 20px 26px;display:flex;flex-direction:column;transform:translateX(100%);
+  transition:transform .38s cubic-bezier(.2,.8,.3,1);overflow-y:auto}
+.mnav[data-open="true"] .mnav-panel{transform:none}
+.mnav-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line-lt)}
+.mnav-head img{height:40px;width:auto}
+.mnav-head .brand{gap:10px}
+.mnav-close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-lt);display:grid;place-items:center;color:#fff}
+.mnav-links{display:grid;gap:2px;margin-top:14px}
+.mnav-links a{display:flex;align-items:center;justify-content:space-between;padding:16px 4px;font-size:19px;font-weight:650;
+  font-family:var(--display);letter-spacing:-.02em;border-bottom:1px solid rgba(255,255,255,.10)}
+.mnav-links a span{color:var(--mint);font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.12em}
+.mnav-links a.here{color:var(--mint)}
+.mnav-foot{margin-top:auto;padding-top:22px;display:grid;gap:10px}
+.mnav-foot .btn{justify-content:center}
+.mnav-meta{font-size:13px;color:#BDCBDE;line-height:1.6}
+
+/* ══════════ CARD DECK — physical playing-card stack ══════════ */
+@media (max-width:760px){
+  .deck{display:block!important;position:relative;height:var(--deck-h,560px);
+    perspective:1100px;touch-action:pan-y;margin-inline:2px}
+  .deck > *{position:absolute!important;left:0;right:0;top:0;width:100%;margin:0;
+    transform-origin:50% 92%;
+    transform:translate3d(var(--x,0px),calc(var(--o,0)*13px),0) scale(calc(1 - var(--o,0)*.052)) rotate(calc(var(--r,0)*1deg + var(--dr,0deg)));
+    transition:transform .45s cubic-bezier(.2,.8,.3,1),opacity .32s,box-shadow .32s;
+    box-shadow:0 22px 44px -26px rgba(8,20,38,.6);will-change:transform;backface-visibility:hidden}
+  .deck > *[data-front="false"]{pointer-events:none}
+  .deck > *[data-stacked="hidden"]{opacity:0}
+  .deck.dragging > *[data-front="true"]{transition:none}
+  .deck > *[data-front="true"]{box-shadow:0 30px 56px -28px rgba(8,20,38,.68)}
+
+  .deck-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}
+  .deck-dots{display:flex;gap:6px;align-items:center}
+  .deck-dots i{width:7px;height:7px;border-radius:99px;background:var(--g-l);transition:all .3s}
+  .deck-dots i.on{background:var(--acc);width:24px}
+  .deck-btn{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--g-l);background:var(--white);
+    color:var(--p1);display:grid;place-items:center}
+  .deck-btn:active{background:var(--p5)}
+  .deck-count{font-size:13px;font-weight:700;color:var(--g-m);font-variant-numeric:tabular-nums}
+  .deck-hint{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:12px;
+    font-size:12.5px;color:var(--g-m);font-weight:600}
+  .deck-hint svg{width:15px;height:15px}
+  [data-theme="dark"] .deck-btn{background:#10263F;border-color:#2A4463;color:#fff}
+  [data-theme="dark"] .deck-dots i{background:#2A4463}
+  [data-theme="dark"] .deck-dots i.on{background:var(--mint)}
+
+  /* ── tabs become swipeable rails ── */
+  .paths{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;
+    margin-inline:calc(var(--pad)*-1);padding:2px var(--pad) 10px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 94%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 4%,#000 94%,transparent)}
+  .paths::-webkit-scrollbar{display:none}
+  .path{flex:none;scroll-snap-align:start}
+  .pops{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+  .pops::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .track{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scrollbar-width:none;
+    padding-bottom:6px;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad)}
+  .track::-webkit-scrollbar{display:none}
+  .track::before{display:none}
+  .stage{flex:0 0 82%;scroll-snap-align:center;background:var(--white);border:1px solid var(--g-l);
+    border-radius:22px;padding:18px}
+  .stage p{max-width:none}
+  [data-theme="dark"] .stage{background:#10263F;border-color:#2A4463}
+
+  /* ── proportions and rhythm ── */
+  .hero h1{font-size:clamp(34px,9.2vw,50px);max-width:none}
+  .topshell{padding-top:calc(var(--navh) + 28px)}
+  .strip .ph{height:112px}
+  .sec{padding:44px 0}
+  .sec-head{margin-bottom:24px}
+  .sec-head h2{font-size:clamp(28px,8vw,40px)}
+  .evidence{padding:26px 16px;border-radius:24px}
+  .case{border-radius:24px}
+  .path-media{min-height:210px}
+  .finder{padding:26px 20px}
+  .searchbar{padding:7px 7px 7px 18px}
+  .searchbar .btn span{display:none}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .stat{padding:20px 14px}
+  .stat:nth-child(odd){border-right:1px solid var(--line-lt)}
+  .stat:nth-child(even){border-right:0}
+  .wordmark{margin-top:26px}
+  .designed-by{justify-content:flex-start;flex-wrap:wrap;gap:12px}
+
+  /* floating controls clear of each other and of the thumb zone */
+  #a11y-fab{right:14px;bottom:14px;width:54px;height:54px}
+  #toTop{right:14px;bottom:78px;width:44px;height:44px}
+  #a11y-panel{right:10px;left:10px;bottom:78px;width:auto;max-height:70vh}
+}
+
+@media (max-width:520px){
+  .strip{grid-template-columns:1fr 1fr}
+  .hero-controls .ctrl{width:100%;justify-content:center}
+  .deck{height:var(--deck-h,600px)}
+}
+</style>
+</head>
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+<body>
+<a class="skip" href="#main-content">Skip to main content</a>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <nav class="nav-inner" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Healthcare Initiative Foundation — home">
+        <img id="logoNav" alt="Healthcare Initiative Foundation">
+      </a>
+      <div class="nav-links">
+        <a class="here" href="#top" aria-current="true">Home</a>
+        <a href="#pillars">About HIF</a><a href="hif-grantmaking.html">Grantmaking</a><a href="#impact">Our impact</a>
+        <a href="#insights">Resources</a><a href="#people">Partnerships</a><a href="#press">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <button class="icon-btn" aria-label="Search the site"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
+        <button class="icon-btn theme-btn" id="themeBtn" aria-label="Switch to dark theme" aria-pressed="false" title="Switch theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <button class="icon-btn burger" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+        <a class="btn" href="#finder"><span>Grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top"><span id="main-content" tabindex="-1"></span>
+
+<!-- ══════════ 01 · HERO (video) ══════════ -->
+<section class="topshell on-dark">
+  <div class="topshell-bg">
+    <video autoplay muted loop playsinline preload="metadata"
+      poster="https://images.pexels.com/videos/6998081/pexels-photo-6998081.jpeg?auto=compress&cs=tinysrgb&w=1900"
+      aria-hidden="true" tabindex="-1">
+      <!-- A doctor and nurse in consultation with a patient at a medical clinic -->
+      <source src="https://videos.pexels.com/video-files/6998081/6998081-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <!-- Fallback: a healthcare professional helping a patient at clinic reception -->
+      <source src="https://videos.pexels.com/video-files/30510691/13072015_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="topshell-grain" aria-hidden="true"></div>
+
+  <!-- Line-art layer, matching the footer pattern -->
+  <svg class="top-art" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="tFade" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#6FD39A" stop-opacity="0"/>
+        <stop offset=".4" stop-color="#6FD39A" stop-opacity=".7"/>
+        <stop offset="1" stop-color="#7FC9F0" stop-opacity=".2"/>
+      </linearGradient>
+      <linearGradient id="tRing" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7FC9F0" stop-opacity=".34"/>
+        <stop offset="1" stop-color="#6FD39A" stop-opacity=".10"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#tRing)" stroke-width="1.1" class="drift">
+      <circle cx="196" cy="140" r="64"/><circle cx="196" cy="140" r="118"/><circle cx="196" cy="140" r="178"/>
+      <circle cx="196" cy="140" r="246"/><circle cx="196" cy="140" r="320"/>
+    </g>
+    <path class="drawline" d="M-20 214 H286 l24 -52 20 108 27 -168 24 132 22 -30 h132 l27 -40 18 78 24 -108 20 86 18 -24 H1460"
+      fill="none" stroke="url(#tFade)" stroke-width="1.7" stroke-linejoin="round"/>
+    <g stroke="#7FC9F0" stroke-opacity=".20" stroke-width="1" fill="none">
+      <path d="M980 96 L1108 168 L1250 104 L1372 190"/>
+      <path d="M1108 168 L1150 300 L1250 104"/>
+      <path d="M1150 300 L1372 190"/>
+    </g>
+    <g fill="#6FD39A" fill-opacity=".34">
+      <circle cx="980" cy="96" r="3.4" class="flicker"/><circle cx="1108" cy="168" r="3.4"/>
+      <circle cx="1250" cy="104" r="3.4" class="flicker"/><circle cx="1372" cy="190" r="3.4"/><circle cx="1150" cy="300" r="3.4"/>
+    </g>
+  </svg>
+
+  <!-- Dotted health emblem — the human-figure/growth mark rendered as a circle halftone -->
+  <div class="dither" id="dither" aria-hidden="true">
+    <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <pattern id="dot7" width="7" height="7" patternUnits="userSpaceOnUse">
+          <circle cx="3.5" cy="3.5" r="1.75" fill="#9BD7F5"/>
+        </pattern>
+        <pattern id="dot10" width="11" height="11" patternUnits="userSpaceOnUse">
+          <circle cx="5.5" cy="5.5" r="2" fill="#6FD39A"/>
+        </pattern>
+        <pattern id="dot14" width="16" height="16" patternUnits="userSpaceOnUse">
+          <circle cx="8" cy="8" r="2.2" fill="#7FC9F0"/>
+        </pattern>
+
+        <!-- one leaf, drawn pointing right from the origin -->
+        <path id="leaf" d="M0 0 C 26 -21 62 -24 88 -6 C 60 16 24 18 0 0 Z"/>
+        <path id="leafS" d="M0 0 C 14 -11 33 -13 46 -3 C 32 9 13 10 0 0 Z"/>
+
+        <linearGradient id="dFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+          <stop offset=".45" stop-color="#fff" stop-opacity=".95"/>
+          <stop offset="1" stop-color="#fff" stop-opacity=".25"/>
+        </linearGradient>
+        <linearGradient id="dFade2" x1="0" y1="0" x2=".3" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+          <stop offset="1" stop-color="#fff" stop-opacity=".08"/>
+        </linearGradient>
+
+        <!-- the emblem: figure + radiating growth -->
+        <mask id="emblem">
+          <g fill="url(#dFade)">
+            <!-- head -->
+            <ellipse cx="0" cy="-118" rx="30" ry="35"/>
+            <!-- torso sweeping into a growth curve -->
+            <path d="M-14 -78 C 40 -60 74 -6 74 74 C 74 132 56 186 30 232 L -34 232 C -6 182 6 132 -2 90 C -12 34 -52 -18 -104 -52 C -66 -58 -34 -72 -14 -78 Z"/>
+            <!-- radiating leaves -->
+            <g>
+              <use href="#leaf" transform="rotate(-152) translate(96 0)"/>
+              <use href="#leaf" transform="rotate(-118) translate(104 0)"/>
+              <use href="#leafS" transform="rotate(-90) translate(150 0)"/>
+              <use href="#leaf" transform="rotate(-62) translate(104 0)"/>
+              <use href="#leaf" transform="rotate(-28) translate(96 0)"/>
+              <use href="#leaf" transform="rotate(180) translate(150 0)"/>
+              <use href="#leaf" transform="rotate(0) translate(150 0)"/>
+              <use href="#leafS" transform="rotate(148) translate(120 0)"/>
+              <use href="#leafS" transform="rotate(32) translate(120 0)"/>
+              <use href="#leafS" transform="rotate(-104) translate(60 0) scale(.5)"/>
+              <use href="#leafS" transform="rotate(-76) translate(60 0) scale(.5)"/>
+            </g>
+          </g>
+        </mask>
+
+        <!-- a soft dotted horizon of care: overlapping arcs -->
+        <mask id="arcs">
+          <g fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="54">
+            <path d="M-60 560 A 420 420 0 0 1 780 560" stroke-opacity=".55"/>
+            <path d="M300 560 A 560 560 0 0 1 1420 560" stroke-opacity=".35"/>
+            <path d="M-200 560 A 300 300 0 0 1 400 560" stroke-opacity=".7"/>
+          </g>
+        </mask>
+      </defs>
+
+      <!-- dotted arcs across the base -->
+      <rect width="1440" height="560" fill="url(#dot14)" mask="url(#arcs)" opacity=".7"/>
+
+      <!-- the emblem, large on the right -->
+      <g transform="translate(1092 300) scale(1.16)">
+        <rect x="-360" y="-360" width="720" height="720" fill="url(#dot7)" mask="url(#emblem)"/>
+      </g>
+      <!-- a smaller, fainter echo on the left -->
+      <g transform="translate(232 372) scale(.62)" opacity=".5">
+        <rect x="-360" y="-360" width="720" height="720" fill="url(#dot10)" mask="url(#emblem)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- dotted echo, upper right -->
+  <svg class="dither-2" viewBox="0 0 720 320" aria-hidden="true">
+    <defs>
+      <pattern id="dot2" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.9" fill="#6FD39A"/></pattern>
+      <mask id="ripple">
+        <g fill="none" stroke="#fff" stroke-width="26">
+          <circle cx="360" cy="300" r="90" stroke-opacity=".85"/>
+          <circle cx="360" cy="300" r="170" stroke-opacity=".55"/>
+          <circle cx="360" cy="300" r="256" stroke-opacity=".3"/>
+        </g>
+      </mask>
+    </defs>
+    <rect width="720" height="320" fill="url(#dot2)" mask="url(#ripple)"/>
+  </svg>
+
+  <div class="floaters" aria-hidden="true">
+    <span class="floater f1"><span class="kk" style="background:var(--mint)"></span><b>Grants</b> for local organizations</span>
+    <span class="floater f2"><span class="kk" style="background:var(--acc-lt)"></span><b>Access</b> to health services</span>
+    <span class="floater f3"><span class="kk" style="background:var(--warm)"></span><b>Montgomery</b> County</span>
+  </div>
+
+  <div class="wrap hero">
+    <span class="rise" style="display:inline-flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <span class="eyebrow">Grant funding for healthcare access</span>
+      <span class="livepill"><i></i>Healthcare Initiative Foundation</span>
+    </span>
+    <h1 class="rise">Expanding access to healthcare. <span class="it">Strengthening healthier</span> communities.</h1>
+
+    <div class="hero-grid">
+      <div class="rise">
+        <p class="lede">HIF provides grant funding to organizations working to improve healthcare access and services for underserved residents in Montgomery County.</p>
+        <div class="hero-actions">
+          <a class="btn btn--white" href="#finder"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a class="btn btn--glass" href="#pillars"><span>How HIF creates impact</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+        <div class="hero-controls">
+          <button class="ctrl" id="motionBtn" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
+            <span id="motionLabel">Pause background motion</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-side rise">
+        <div class="ph"><img class="face-safe" src="https://images.pexels.com/photos/7465700/pexels-photo-7465700.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A medical team and volunteers ready to help at a community health event"></div>
+        <div class="in">
+          <div class="k">Grantmaking <span>at a glance</span></div>
+          <p>Supporting organizations working to improve healthcare access and services across Montgomery County.</p>
+          <a href="#evidence">Explore grantmaking <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="strip rise">
+      <div class="ph"><img class="face-safe" src="https://images.pexels.com/photos/7089301/pexels-photo-7089301.jpeg?auto=compress&cs=tinysrgb&w=700" alt="A clinician reviewing a patient's chart during a consultation"><span class="cap">Healthcare access</span></div>
+      <div class="ph"><img class="face-safe" src="https://images.pexels.com/photos/6647027/pexels-photo-6647027.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Two outreach volunteers visiting homes in a neighborhood"><span class="cap">Community health</span></div>
+      <div class="ph"><img class="face-safe" src="https://images.pexels.com/photos/12193104/pexels-photo-12193104.jpeg?auto=compress&cs=tinysrgb&w=700" alt="A nurse checking a patient's blood pressure"><span class="cap">Health services</span></div>
+      <div class="ph"><img src="https://images.pexels.com/photos/5668526/pexels-photo-5668526.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Colleagues shaking hands across a table after agreeing to work together"><span class="cap">Partnerships</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding-top:clamp(26px,3vw,42px)">
+  <div class="marquee">
+    <div class="marquee-label">What grant funding supports</div>
+    <div class="marquee-track" id="mq">
+      <span>Healthcare access</span><span>Community health</span><span>Health services</span><span>Underserved residents</span><span>Community partnerships</span><span>Healthcare equity</span><span>Local organizations</span><span>Montgomery County</span><span>Community-based programs</span><span>Local impact</span>
+    </div>
+  </div>
+  <div class="mint-rule"></div>
+</div>
+
+<!-- ══════════ 02 · AUDIENCE PATHWAYS ══════════ -->
+<section class="sec sec-tint" id="pathways">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="n">02 — Start here</span><h2 style="margin-top:14px">How can HIF <span class="it uline">support you?</span></h2></div>
+      <p class="lede">Find the information, funding opportunities, and resources that match what you're looking for.</p>
+    </div>
+    <div class="paths rise" role="tablist" aria-label="Choose your role">
+      <button class="path" role="tab" aria-selected="true" data-p="0">Seeking funding</button>
+      <button class="path" role="tab" aria-selected="false" data-p="1">Current grant partner</button>
+      <button class="path" role="tab" aria-selected="false" data-p="2">Community organization</button>
+      <button class="path" role="tab" aria-selected="false" data-p="3">Healthcare organization</button>
+      <button class="path" role="tab" aria-selected="false" data-p="4">Community stakeholder</button>
+    </div>
+    <div class="path-panel rise">
+      <figure class="path-media" style="margin:0">
+        <img id="pImg" src="" alt="">
+        <figcaption class="cop"><div class="who" id="pWho"></div><p id="pSub"></p></figcaption>
+      </figure>
+      <div class="path-links" id="pLinks"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 · RESOURCE FINDER ══════════ -->
+<section class="sec on-dark" id="finder" style="padding-top:0">
+  <div class="wrap">
+    <div class="finder rise">
+      <div class="finder-bg"><img src="https://images.pexels.com/photos/8101922/pexels-photo-8101922.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Two people shaking hands across a desk after reviewing a request"></div>
+      <span class="eyebrow">03 — Grant finder</span>
+      <h2 style="margin-top:20px">What are you <span class="it">looking for?</span></h2>
+      <p class="lede" style="margin-top:16px">Find grant opportunities, guidelines, eligibility information, and resources to help you navigate HIF's grantmaking process.</p>
+      <form class="searchbar" onsubmit="return false">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <label for="q" style="position:absolute;left:-9999px">Search grants, guidelines and resources</label>
+        <input id="q" placeholder="Search grants, guidelines, resources…" autocomplete="off">
+        <button class="btn" type="submit"><span>Search</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      </form>
+      <div class="pops">
+        <span class="lbl">Popular</span>
+        <button class="chip">Grant opportunities</button><button class="chip">Eligibility</button>
+        <button class="chip">Grant guidelines</button><button class="chip">Grant calendar</button>
+        <button class="chip">How to apply</button><button class="chip">Funded projects</button>
+      </div>
+      <div style="margin-top:24px"><a class="btn btn--white" href="#"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <p class="finder-help">Not sure where to start? <a href="#pathways">Browse by who you are</a> or <a href="#press">contact HIF</a>.</p>
+
+      <div class="finder-meta">
+        <span><b>Grants</b> &nbsp;current funding opportunities</span>
+        <span><b>Eligibility</b> &nbsp;who can apply for funding</span>
+        <span><b>Process</b> &nbsp;how to apply, step by step</span>
+        <span><b>Impact</b> &nbsp;funded projects and community stories</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 · PILLARS ══════════ -->
+<section class="sec" id="pillars" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="n">04 — Our approach</span><h2 style="margin-top:14px">How we <span class="it uline">create impact</span></h2></div>
+      <p class="lede">HIF works with organizations and community partners to strengthen healthcare access and support solutions that respond to local needs.</p>
+    </div>
+    <div class="pillars" id="pillars-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════ 05 · EVIDENCE → ACTION ══════════ -->
+<section class="sec" id="evidence" style="padding-top:0">
+  <div class="wrap">
+    <div class="evidence">
+      <div class="sec-head rise">
+        <div><span class="n">05 — How grantmaking works</span><h2 style="margin-top:14px">From funding to <span class="it">real-world impact</span></h2></div>
+        <p class="lede">Follow how HIF's grantmaking connects community needs with organizations, programs, and local impact.</p>
+      </div>
+      <div class="pipe-wrap rise">
+        <div class="track" role="tablist" aria-label="Stages of the grantmaking journey" id="track"></div>
+        <article class="case">
+          <div class="case-tag">
+            <div class="bg"><img id="cImg" src="" alt=""></div>
+            <div><div class="p" id="cKicker"></div><h3 id="cTitle"></h3></div>
+            <div class="prog" id="cProg" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="case-body">
+            <p class="quote" id="cQuote"></p>
+            <p class="detail" id="cDetail"></p>
+            <div class="metrics" id="cMetrics"></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 06 · INITIATIVES ══════════ -->
+<section class="sec" id="initiatives">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="n">06 — Areas of work</span><h2 style="margin-top:14px">Explore HIF's <span class="it uline">impact</span></h2>
+        <p class="lede" style="margin-top:14px">Discover the organizations, initiatives, and community work supported through HIF's grantmaking.</p></div>
+      <a class="btn btn--ghost" href="#"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="inits" id="inits"></div>
+  </div>
+</section>
+
+<!-- ══════════ 07 · IMPACT ══════════ -->
+<section class="impact on-dark" id="impact">
+  <div class="impact-bg"><img src="https://images.pexels.com/photos/6646941/pexels-photo-6646941.jpeg?auto=compress&cs=tinysrgb&w=1800" alt=""></div>
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="eyebrow">07 — Impact</span><h2 style="margin-top:20px">Our <span class="it" style="color:var(--mint)">impact</span></h2></div>
+      <p class="lede">Every grant is an opportunity to strengthen healthcare access and support organizations serving communities across Montgomery County.</p>
+    </div>
+    <div class="impact-grid rise">
+      <div class="stat word"><b>Healthcare <i>access</i></b><span>Helping residents reach the care and services they need</span></div>
+      <div class="stat word"><b>Community <i>organizations</i></b><span>Funding the organizations already serving their neighbors</span></div>
+      <div class="stat word"><b>Local <i>partnerships</i></b><span>Working alongside partners on shared local goals</span></div>
+      <div class="stat word"><b>Grant-supported <i>solutions</i></b><span>Programs and services shaped by community need</span></div>
+    </div>
+    <div class="story rise">
+      <div>
+        <blockquote>Local organizations turn grant support into <span class="it">services, programs, and solutions</span> that help communities access the care they need.</blockquote>
+        <div class="who">
+          <p><b>Why grantmaking works locally</b>Funding reaches the organizations already serving Montgomery County residents.</p>
+        </div>
+      </div>
+      <figure class="story-media" style="margin:0">
+        <img src="https://images.pexels.com/photos/6646924/pexels-photo-6646924.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Volunteers handing out water and supplies to residents outdoors">
+        <figcaption>Grant funding supports work that happens where people live — in clinics, community spaces, and neighborhoods.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 08 · PEOPLE ══════════ -->
+<section class="sec people" id="people">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="n">08 — Partners</span><h2 style="margin-top:14px">Meet the partners <span class="it">behind</span> the impact</h2>
+        <p class="lede" style="margin-top:14px">HIF works alongside organizations and community partners working to improve healthcare access.</p></div>
+      <div class="rail-nav">
+        <button class="icon-btn" id="railPrev" aria-label="Previous partners"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+        <button class="icon-btn" id="railNext" aria-label="Next partners"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="people-rail rise" id="rail"></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px" class="rise">
+      <a class="btn" href="#"><span>Explore our partners</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="btn btn--ghost" href="#finder"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 09 · LATEST INSIGHTS ══════════ -->
+<section class="sec sec-tint" id="insights">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <div><span class="n">09 — News &amp; updates</span><h2 style="margin-top:14px">What's happening <span class="it uline">at HIF</span></h2>
+        <p class="lede" style="margin-top:14px">Explore HIF updates, grantmaking news, community stories, and resources.</p></div>
+      <a class="btn btn--ghost" href="#"><span>All news &amp; updates</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="posts" id="posts"></div>
+  </div>
+</section>
+
+<!-- ══════════ 10 · PRESS / EXPERTS ══════════ -->
+<section class="sec" id="press" style="padding-top:0">
+  <div class="wrap">
+    <div class="press">
+      <div class="press-card a rise">
+        <div class="bg"><img src="https://images.pexels.com/photos/6627926/pexels-photo-6627926.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""></div>
+        <div>
+          <span class="n">10 — Support</span>
+          <h3 style="margin-top:16px">Need help finding the right opportunity?</h3>
+          <p>Have questions about HIF's grantmaking process, eligibility, or funding opportunities? Find the information you need before you apply.</p>
+        </div>
+        <a class="btn btn--white" href="#evidence"><span>Explore grantmaking</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="press-card b rise">
+        <div>
+          <span class="n">Contact</span>
+          <h3 style="margin-top:16px">Talk with the HIF team</h3>
+          <p>Ask about eligibility, grant guidelines, or where your organization fits — before you start an application.</p>
+          <div class="quicklinks">
+            <a href="#">Eligibility</a><a href="#">Grant guidelines</a><a href="#">How to apply</a><a href="#">Grant calendar</a>
+          </div>
+        </div>
+        <a class="btn btn--ghost" href="#"><span>Contact HIF</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11 · NEWSLETTER ══════════ -->
+<section class="sec" id="newsletter" style="padding-top:0">
+  <div class="wrap">
+    <div class="news rise">
+      <div class="in">
+        <span class="n">11 — Stay connected</span>
+        <h2 style="margin-top:16px">Stay connected <span class="it">with HIF.</span></h2>
+        <p class="lede">Get updates about grant opportunities, HIF news, community impact, and resources.</p>
+        <div class="news-form">
+          <div class="interests">
+            <button class="int" aria-pressed="true">Grant opportunities</button><button class="int" aria-pressed="false">Grantmaking news</button>
+            <button class="int" aria-pressed="false">Community impact</button><button class="int" aria-pressed="false">Resources</button>
+            <button class="int" aria-pressed="false">Partnerships</button><button class="int" aria-pressed="false">Reports</button>
+          </div>
+          <form class="news-row" id="newsForm" novalidate onsubmit="return false">
+            <label for="email" style="position:absolute;left:-9999px">Email address</label>
+            <input id="email" type="email" placeholder="you@organization.org" required>
+            <button class="btn" type="submit"><span>Get HIF updates</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          </form>
+          <p class="field-error" id="emailError" role="alert">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.2v.1"/></svg>
+            <span>Enter an email address in the format name@example.com.</span>
+          </p>
+          <p class="news-note">Unsubscribe in one click. HIF never shares your address.</p>
+          <p class="news-ok" id="newsOk" role="status" aria-live="polite">You're signed up. Check your inbox to confirm your interests.</p>
+        </div>
+      </div>
+      <div class="news-media"><img class="face-safe" src="https://images.pexels.com/photos/6646926/pexels-photo-6646926.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A volunteer handing a drink to a resident at a community event"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ 12 · FOOTER ══════════ -->
+<footer>
+  <!-- Subtle abstract line art: population contours, a pulse trace, and a network of communities -->
+  <svg class="foot-art" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#7FC9F0" stop-opacity="0"/>
+        <stop offset=".45" stop-color="#7FC9F0" stop-opacity=".55"/>
+        <stop offset="1" stop-color="#6FD39A" stop-opacity=".18"/>
+      </linearGradient>
+      <linearGradient id="fadeP" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6FD39A" stop-opacity=".30"/>
+        <stop offset="1" stop-color="#5487D1" stop-opacity=".12"/>
+      </linearGradient>
+    </defs>
+    <!-- contour rings: reach spreading outward from a community -->
+    <g class="fa-rings" fill="none" stroke="url(#fadeP)" stroke-width="1.1">
+      <circle cx="1210" cy="180" r="70"/><circle cx="1210" cy="180" r="128"/><circle cx="1210" cy="180" r="190"/>
+      <circle cx="1210" cy="180" r="258"/><circle cx="1210" cy="180" r="332"/><circle cx="1210" cy="180" r="412"/>
+      <circle cx="150" cy="600" r="60"/><circle cx="150" cy="600" r="112"/><circle cx="150" cy="600" r="172"/><circle cx="150" cy="600" r="240"/>
+    </g>
+    <!-- pulse trace -->
+    <path class="fa-pulse" d="M-20 452 H300 l26 -58 22 122 30 -190 26 148 24 -34 h150 l30 -46 20 88 26 -122 22 96 20 -26 H1460"
+          fill="none" stroke="url(#fadeR)" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- network of nodes -->
+    <g class="fa-net" stroke="#7FC9F0" stroke-opacity=".22" stroke-width="1" fill="none">
+      <path d="M180 200 L360 130 L560 210 L742 120 L930 230"/>
+      <path d="M360 130 L420 300 L560 210"/>
+      <path d="M742 120 L820 290 L930 230"/>
+      <path d="M420 300 L820 290"/>
+    </g>
+    <g class="fa-nodes" fill="#6FD39A" fill-opacity=".34">
+      <circle cx="180" cy="200" r="3.5"/><circle cx="360" cy="130" r="3.5"/><circle cx="560" cy="210" r="3.5"/>
+      <circle cx="742" cy="120" r="3.5"/><circle cx="930" cy="230" r="3.5"/><circle cx="420" cy="300" r="3.5"/>
+      <circle cx="820" cy="290" r="3.5"/>
+    </g>
+    <!-- horizon of rising bars: population health improving -->
+    <g class="fa-bars" fill="none" stroke="#5487D1" stroke-opacity=".22" stroke-width="1">
+      <path d="M60 690 V636"/><path d="M96 690 V612"/><path d="M132 690 V656"/><path d="M168 690 V590"/>
+      <path d="M204 690 V624"/><path d="M240 690 V566"/><path d="M276 690 V600"/><path d="M312 690 V540"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="foot-lead foot-brand">
+      <div class="who">
+        <a class="logo-chip" href="#top" aria-label="Healthcare Initiative Foundation — home"><img id="logoFoot" alt="Healthcare Initiative Foundation"></a>
+        <p>Grant funding for organizations working to improve healthcare access and services for underserved residents in Montgomery County.</p>
+      </div>
+      <a class="btn btn--white" href="#finder"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+
+    <div class="foot-top">
+      <div class="foot-col"><h5>About HIF</h5><ul><li><a href="#">Who we are</a></li><li><a href="#">Mission &amp; vision</a></li><li><a href="#">Leadership</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="foot-col"><h5>Grantmaking</h5><ul><li><a href="hif-grantmaking.html#opportunities">Grant opportunities</a></li><li><a href="hif-grantmaking.html#support">What we fund</a></li><li><a href="hif-grantmaking.html#eligibility">Eligibility</a></li><li><a href="hif-grantmaking.html#resources">Grant guidelines</a></li><li><a href="hif-grantmaking.html#calendar">Grant calendar</a></li><li><a href="hif-grantmaking.html#process">How to apply</a></li></ul></div>
+      <div class="foot-col"><h5>Our impact</h5><ul><li><a href="#">Impact overview</a></li><li><a href="#">Funded projects</a></li><li><a href="#">Community stories</a></li><li><a href="#">Partners</a></li></ul></div>
+      <div class="foot-col"><h5>Resources</h5><ul><li><a href="#">Resources</a></li><li><a href="#">News &amp; updates</a></li><li><a href="#">Reports &amp; publications</a></li></ul></div>
+      <div class="foot-col"><h5>Connect</h5><ul><li><a href="#">Contact HIF</a></li><li><a href="#newsletter">Get updates</a></li></ul></div>
+    </div>
+
+    <div class="foot-bottom">
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21.4 8.75 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-4z"/></svg></a>
+        <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.5 3h6.8l4.7 5.9Zm-1.2 16h1.8L7.8 4.9H5.9Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.13-2.5-.13-2.45 0-4.15 1.5-4.15 4.25V9.9H7.3V13h2.75v8z"/></svg></a>
+      </div>
+      <div class="foot-legal"><a href="#">Privacy policy</a><a href="#">Terms &amp; legal</a><a href="#">Accessibility</a><span>© 2026 Healthcare Initiative Foundation</span></div>
+    </div>
+
+    <div class="designed-by">
+      <span class="lbl">Website<br>Designed by</span>
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNjk5LjUxIDgwMCI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjUuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS40IEJ1aWxkIDMpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxNTMuMjcgMTU0LjMgNjM1LjkyIDE1NC4zMSA2MzUuOTIgMzE3LjIxIDY4OS41NCAzMTcuMjEgNjg5LjU0IDEwMCA5OS42NiAxMDAgOTkuNjYgNzAwIDY4OS41MyA3MDAgNjg5LjUzIDU5MS40MSA2MzUuOTIgNTkxLjQxIDYzNS45MiA2NDUuNzEgMTUzLjI3IDY0NS43MSAxNTMuMjcgMTU0LjMgMTUzLjI3IDE1NC4zIi8+CiAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ3Mi42MSw1MTIuMTJjLTcsMy41LTIyLjc1LDcuMjUtNDMuMjUsNy4yNS01OC4yNSwwLTg4LjI1LTM2LjI1LTg4LjI1LTg0LjI1LDAtNTcuNSw0MS04OS41LDkyLTg5LjUsMTkuNzUsMCwzNC43NSw0LDQxLjUsNy41bC03Ljc1LDMwLjI1Yy03Ljc1LTMuMjUtMTguNS02LjI1LTMyLTYuMjUtMzAuMjUsMC01My43NSwxOC4yNS01My43NSw1NS43NSwwLDMzLjc1LDIwLDU1LDU0LDU1LDExLjUsMCwyNC4yNS0yLjUsMzEuNzUtNS41bDUuNzUsMjkuNzVaIi8+CiAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYxMi4zNiw0NTQuMzdjMCw0NC43NS0zMS43NSw2NS4yNS02NC41LDY1LjI1LTM1Ljc1LDAtNjMuMjUtMjMuNS02My4yNS02M3MyNi02NC43NSw2NS4yNS02NC43NSw2Mi41LDI1Ljc1LDYyLjUsNjIuNVpNNTIzLjg2LDQ1NS42MmMwLDIxLDguNzUsMzYuNzUsMjUsMzYuNzUsMTQuNzUsMCwyNC4yNS0xNC43NSwyNC4yNS0zNi43NSwwLTE4LjI1LTctMzYuNzUtMjQuMjUtMzYuNzUtMTguMjUsMC0yNSwxOC43NS0yNSwzNi43NVoiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjM1Ljg2LDQzMy42MmMwLTE1LjI1LS41LTI4LjI1LTEtMzloMzJsMS43NSwxNi41aC43NWM1LjI1LTcuNzUsMTYtMTkuMjUsMzctMTkuMjUsMTUuNzUsMCwyOC4yNSw4LDMzLjUsMjAuNzVoLjVjNC41LTYuMjUsMTAtMTEuMjUsMTUuNzUtMTQuNzUsNi43NS00LDE0LjI1LTYsMjMuMjUtNiwyMy41LDAsNDEuMjUsMTYuNSw0MS4yNSw1M3Y3MmgtMzd2LTY2LjVjMC0xNy43NS01Ljc1LTI4LTE4LTI4LTguNzUsMC0xNSw2LTE3LjUsMTMuMjUtMSwyLjc1LTEuNSw2Ljc1LTEuNSw5Ljc1djcxLjVoLTM3di02OC41YzAtMTUuNS01LjUtMjYtMTcuNS0yNi05Ljc1LDAtMTUuNSw3LjUtMTcuNzUsMTMuNzUtMS4yNSwzLTEuNSw2LjUtMS41LDkuNXY3MS4yNWgtMzd2LTgzLjI1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NTAuODYsNDM1LjYyYzAtMTYtLjUtMjkuNzUtMS00MWgzM2wxLjc1LDE3aC41YzktMTMsMjMtMTkuNzUsNDAuNzUtMTkuNzUsMjYuNzUsMCw1MC43NSwyMy4yNSw1MC43NSw2Mi4yNSwwLDQ0LjUtMjguMjUsNjUuNS01NS41LDY1LjUtMTQuNzUsMC0yNi4yNS02LTMxLjc1LTE0aC0uNXY2MC43NWgtMzh2LTEzMC43NVpNODg4Ljg2LDQ2NC4zN2MwLDMsLjI1LDUuNzUuNzUsOCwyLjUsMTAuMjUsMTEuMjUsMTgsMjIuMjUsMTgsMTYuNSwwLDI2LjI1LTEzLjc1LDI2LjI1LTM0LjUsMC0xOS41LTguNzUtMzQuMjUtMjUuNzUtMzQuMjUtMTAuNzUsMC0yMC4yNSw4LTIyLjc1LDE5LjI1LS41LDItLjc1LDQuNS0uNzUsNi43NXYxNi43NVoiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTExNS42LDQ3Ny42MmMwLDE2LC41LDI5LDEsMzkuMjVoLTMzbC0xLjc1LTE3LjI1aC0uNzVjLTQuNzUsNy41LTE2LjI1LDIwLTM4LjI1LDIwLTI0Ljc1LDAtNDMtMTUuNS00My01My4yNXYtNzEuNzVoMzguMjV2NjUuNzVjMCwxNy43NSw1Ljc1LDI4LjUsMTksMjguNSwxMC41LDAsMTYuNS03LjI1LDE5LTEzLjI1LDEtMi4yNSwxLjI1LTUuMjUsMS4yNS04LjI1di03Mi43NWgzOC4yNXY4M1oiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTE0Ni4xLDQzMy42MmMwLTE1LjI1LS41LTI4LjI1LTEtMzloMzNsMS43NSwxNi43NWguNzVjNS03Ljc1LDE3LjUtMTkuNSwzNy43NS0xOS41LDI1LDAsNDMuNzUsMTYuNSw0My43NSw1Mi41djcyLjVoLTM4di02Ny43NWMwLTE1Ljc1LTUuNS0yNi41LTE5LjI1LTI2LjUtMTAuNSwwLTE2Ljc1LDcuMjUtMTkuMjUsMTQuMjUtMSwyLjI1LTEuNSw2LTEuNSw5LjV2NzAuNWgtMzh2LTgzLjI1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjkyLjYsNDMzLjYyYzAtMTUuMjUtLjUtMjguMjUtMS0zOWgzM2wxLjc1LDE2Ljc1aC43NWM1LTcuNzUsMTcuNS0xOS41LDM3Ljc1LTE5LjUsMjUsMCw0My43NSwxNi41LDQzLjc1LDUyLjV2NzIuNWgtMzh2LTY3Ljc1YzAtMTUuNzUtNS41LTI2LjUtMTkuMjUtMjYuNS0xMC41LDAtMTYuNzUsNy4yNS0xOS4yNSwxNC4yNS0xLDIuMjUtMS41LDYtMS41LDkuNXY3MC41aC0zOHYtODMuMjVaIi8+CiAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0NjguMzUsNDY3Ljg3YzEuMjUsMTUuNzUsMTYuNzUsMjMuMjUsMzQuNSwyMy4yNSwxMywwLDIzLjUtMS43NSwzMy43NS01bDUsMjUuNzVjLTEyLjUsNS0yNy43NSw3LjUtNDQuMjUsNy41LTQxLjUsMC02NS4yNS0yNC02NS4yNS02Mi4yNSwwLTMxLDE5LjI1LTY1LjI1LDYxLjc1LTY1LjI1LDM5LjUsMCw1NC41LDMwLjc1LDU0LjUsNjEsMCw2LjUtLjc1LDEyLjI1LTEuMjUsMTVoLTc4Ljc1Wk0xNTEzLjEsNDQxLjg3YzAtOS4yNS00LTI0Ljc1LTIxLjUtMjQuNzUtMTYsMC0yMi41LDE0LjUtMjMuNSwyNC43NWg0NVoiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTU3MS4xLDMzOS4zN2gzOHYxNzcuNWgtMzh2LTE3Ny41WiIvPgogIDxnPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExMTIuNyw3MDEuNDZ2LTExMC43MWg0My42YzEyLjAzLDAsMjIuNDIsMi4yMywzMS4xNiw2LjcsOC43NSw0LjQ3LDE1LjQ5LDEwLjg0LDIwLjIzLDE5LjEzLDQuNzQsOC4yOSw3LjExLDE4LjEzLDcuMTEsMjkuNTJzLTIuMzksMjEuMS03LjE4LDI5LjM5Yy00Ljc4LDguMjktMTEuNTUsMTQuNjktMjAuMywxOS4ycy0xOS4wOSw2Ljc3LTMxLjAzLDYuNzdoLTQzLjZaTTExMzUuOCw2ODEuNzdoMjAuNWMxMS40OCwwLDIwLjIxLTMuMjYsMjYuMTctOS43Nyw1Ljk3LTYuNTEsOC45NS0xNS4xNSw4Ljk1LTI1LjlzLTIuOTktMTkuNS04Ljk1LTI1Ljk3Yy01Ljk3LTYuNDctMTQuNjktOS43LTI2LjE3LTkuN2gtMjAuNXY3MS4zNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjQxLjg2LDYxMS4zOWMtMy40NiwwLTYuNC0xLjIxLTguODItMy42Mi0yLjQyLTIuNDEtMy42Mi01LjM1LTMuNjItOC44MnMxLjIxLTYuNCwzLjYyLTguODJjMi40MS0yLjQxLDUuMzUtMy42Miw4LjgyLTMuNjJzNi40LDEuMjEsOC44MiwzLjYyYzIuNDEsMi40MiwzLjYyLDUuMzUsMy42Miw4Ljgycy0xLjIxLDYuNC0zLjYyLDguODJjLTIuNDIsMi40Mi01LjM1LDMuNjItOC44MiwzLjYyWk0xMjMwLjUxLDcwMS40NnYtODIuMDFoMjIuNjl2ODIuMDFoLTIyLjY5WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEzMTEuMDEsNzM1LjljLTEyLjMsMC0yMi4zLTIuNDgtMzAtNy40NS03LjctNC45Ny0xMi4yOC0xMS44Ny0xMy43NC0yMC43MWgyNC4wNWMyLjE5LDYuNzQsOC41MiwxMC4xMSwxOSwxMC4xMSw3LjExLDAsMTIuNTUtMS42MiwxNi4zMy00Ljg1LDMuNzgtMy4yNCw1LjY3LTcuOTEsNS42Ny0xNC4wMXYtMTAuOTNoLS42OGMtMi40Niw0LjM3LTUuODYsNy43LTEwLjE4LDkuOTgtNC4zMywyLjI4LTkuNSwzLjQyLTE1LjUxLDMuNDItNy43NSwwLTE0LjQ3LTEuNzEtMjAuMTYtNS4xMi01LjctMy40Mi0xMC4xMS04LjI3LTEzLjI2LTE0LjU2cy00LjcyLTEzLjY3LTQuNzItMjIuMTRjMC0xMi43NiwzLjUzLTIyLjkyLDEwLjU5LTMwLjQ4LDcuMDYtNy41NiwxNi43NC0xMS4zNCwyOS4wNC0xMS4zNCw2LjkyLDAsMTIuODIsMS4zMiwxNy43LDMuOTYsNC44NywyLjY0LDguNzcsNi4zMywxMS42OSwxMS4wN2g1Ljc0di0xMy4zOWgyMi45NnYyMi40MmgtMTEuMjF2NTcuNDFjMCwxMS42Ni0zLjc0LDIwLjY4LTExLjIxLDI3LjA2LTcuNDcsNi4zOC0xOC4xOCw5LjU3LTMyLjEyLDkuNTdaTTEzMTEuNTYsNjgxLjc3YzYuMjksMCwxMS4yMS0xLjczLDE0Ljc2LTUuMTksMy41NS0zLjQ2LDUuMzMtOC4yLDUuMzMtMTQuMjF2LTUuNzRjMC01LjkyLTEuOC0xMC41OS01LjQtMTQuMDEtMy42LTMuNDItOC41LTUuMTItMTQuNjktNS4xMi02LjY1LDAtMTEuODIsMS45Ni0xNS41MSw1Ljg4LTMuNjksMy45Mi01LjU0LDkuMzktNS41NCwxNi40czEuODUsMTIuNDQsNS41NCwxNi4yNiw4Ljg2LDUuNzQsMTUuNTEsNS43NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMzkwLjAxLDYxMS4zOWMtMy40NiwwLTYuNC0xLjIxLTguODItMy42Mi0yLjQyLTIuNDEtMy42Mi01LjM1LTMuNjItOC44MnMxLjIxLTYuNCwzLjYyLTguODIsNS4zNS0zLjYyLDguODItMy42Miw2LjQsMS4yMSw4LjgyLDMuNjJjMi40MSwyLjQyLDMuNjIsNS4zNSwzLjYyLDguODJzLTEuMjEsNi40LTMuNjIsOC44Mi01LjM1LDMuNjItOC44MiwzLjYyWk0xMzc4LjY3LDcwMS40NnYtODIuMDFoMjIuNjl2ODIuMDFoLTIyLjY5WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0NDUuNzgsNzAxLjQ2Yy01LjgzLDAtMTAuMzctMS40OC0xMy42LTQuNDQtMy4yNC0yLjk2LTQuODUtNy40OS00Ljg1LTEzLjZ2LTQ2LjJoLTE0LjA4di0xNy43N2gxNC4zNXYtMjQuNmgyMi4xNHYyNC42aDE5djE3Ljc3aC0xOC43MnY0Ni40N2gyMC42NHYxNy43N2gtMjQuODhaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUwOS40Nyw3MDIuOTZjLTkuNjYsMC0xNy4yMi0yLjM1LTIyLjY5LTcuMDQtNS40Ny00LjY5LTguMi0xMC44Ny04LjItMTguNTIsMC04LjExLDIuODItMTQuMzUsOC40Ny0xOC43Miw1LjY1LTQuMzcsMTMuNzYtNi41NiwyNC4zMy02LjU2aDIzLjUxdi0zLjE0YzAtOC44NC01LjI5LTEzLjI2LTE1Ljg1LTEzLjI2LTkuMiwwLTE0Ljc2LDMuMTktMTYuNjcsOS41N2gtMjIuNTVjMS44Mi05LjAyLDYuMDYtMTUuODUsMTIuNzEtMjAuNSw2LjY1LTQuNjUsMTUuNDktNi45NywyNi41Mi02Ljk3LDEyLjIxLDAsMjEuNTMsMi43MywyNy45NSw4LjJzOS42NCwxMy40NCw5LjY0LDIzLjkydjI5LjExaDEwLjY2djIyLjQyaC0yMi45NnYtMTMuMzloLTUuNzRjLTIuODMsNC43NC02LjYxLDguNDEtMTEuMzQsMTEtNC43NCwyLjYtMTAuNjYsMy45LTE3Ljc3LDMuOVpNMTUxMi44OCw2ODUuNzRjNC4yOCwwLDguMDYtLjc3LDExLjM0LTIuMzIsMy4yOC0xLjU1LDUuODgtMy42Miw3Ljc5LTYuMjIsMS45MS0yLjYsMi44Ny01LjU0LDIuODctOC44MnYtMS4yM2gtMjIuNDJjLTguMiwwLTEyLjMsMy4wNS0xMi4zLDkuMTYsMCwzLjAxLDEuMTQsNS4zMywzLjQyLDYuOTcsMi4yOCwxLjY0LDUuMzgsMi40Niw5LjI5LDIuNDZaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTU4MS40OSw3MDEuNDZ2LTExNC44MWgyMi42OXYxMTQuODFoLTIyLjY5WiIvPgogIDwvZz4KPC9zdmc+" alt="Compunnel Digital">
+    </div>
+
+    <!-- Giant wordmark, edge to edge -->
+    <div class="wordmark" aria-hidden="true">
+      <svg viewBox="0 0 1700 148" preserveAspectRatio="xMidYMid meet">
+        <text x="0" y="126" textLength="1700" lengthAdjust="spacingAndGlyphs" font-size="150">Healthcare Initiative Foundation</text>
+      </svg>
+    </div>
+  </div>
+</footer>
+
+<p class="credit">Design concept. Photography and footage from Pexels (free licence) — replace with commissioned HIF media before launch.</p>
+
+
+<!-- ══════════ ACCESSIBILITY TOOLS ══════════ -->
+
+<!-- ══════════ MOBILE MENU ══════════ -->
+<div class="mnav" id="mobileNav" hidden>
+  <div class="mnav-scrim" data-close></div>
+  <div class="mnav-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="mnav-head">
+      <span class="brand"><img id="markMnav" alt="" aria-hidden="true">
+        <span class="lock"><b>Healthcare Initiative</b><span>Foundation</span></span></span>
+      <button class="mnav-close" data-close aria-label="Close menu">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="mnav-links" aria-label="Mobile">
+      <a class="here" href="#top" aria-current="true">Home <span>You are here</span></a>
+      <a href="#pillars">About HIF <span>04</span></a>
+      <a href="hif-grantmaking.html">Grantmaking</a>
+      <a href="#impact">Our impact <span>07</span></a>
+      <a href="#people">Partnerships <span>08</span></a>
+      <a href="#insights">Resources <span>09</span></a>
+      <a href="#press">Contact <span>10</span></a>
+    </nav>
+    <div class="mnav-foot">
+      <a class="btn" href="#finder"><span>Explore grant opportunities</span><span class="dot"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <p class="mnav-meta">Grant funding for organizations improving healthcare access across Montgomery County.</p>
+    </div>
+  </div>
+</div>
+
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<button id="a11y-fab" aria-label="Open accessibility options" aria-expanded="false" aria-controls="a11y-panel">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <circle cx="12" cy="5.6" r="1.9"/>
+    <path d="M4.9 8.6c2.3.8 4.6 1.2 7.1 1.2s4.8-.4 7.1-1.2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M12 9.8v4.4m0 0-2.4 5.2M12 14.2l2.4 5.2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div id="a11y-panel" role="dialog" aria-modal="false" aria-labelledby="a11y-title" hidden>
+  <button id="a11y-close" aria-label="Close accessibility options"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <h2 id="a11y-title">Accessibility</h2>
+  <p class="sub">Adjust how this site looks and reads. Settings apply instantly.</p>
+
+  <button class="a11y-row" data-toggle="bw" aria-pressed="false">
+    <span>Black &amp; white<small>Remove all colour from the page</small></span><span class="sw" aria-hidden="true"></span>
+  </button>
+  <button class="a11y-row" data-toggle="contrast" aria-pressed="false">
+    <span>High contrast<small>Stronger text, borders and overlays</small></span><span class="sw" aria-hidden="true"></span>
+  </button>
+  <button class="a11y-row" data-toggle="bigtext" aria-pressed="false">
+    <span>Larger text<small>Increase every size by 19%</small></span><span class="sw" aria-hidden="true"></span>
+  </button>
+  <button class="a11y-row" data-toggle="ulinks" aria-pressed="false">
+    <span>Underline links<small>Never rely on colour alone</small></span><span class="sw" aria-hidden="true"></span>
+  </button>
+  <button class="a11y-row" data-toggle="motion" aria-pressed="false">
+    <span>Pause animation<small>Stop all movement and autoplay</small></span><span class="sw" aria-hidden="true"></span>
+  </button>
+
+  <div class="a11y-row" style="border-bottom:0">
+    <span>Listen to this page<small>Read the content aloud</small></span>
+  </div>
+  <div class="a11y-field">
+    <label for="voiceSel">Voice</label>
+    <select id="voiceSel"></select>
+  </div>
+  <div class="a11y-field">
+    <label for="rateSel">Speed</label>
+    <select id="rateSel">
+      <option value="0.8">Slower</option>
+      <option value="0.95" selected>Normal</option>
+      <option value="1.15">Faster</option>
+    </select>
+  </div>
+  <div class="a11y-read">
+    <button id="speakPlay">Play</button>
+    <button id="speakPause" disabled>Pause</button>
+    <button id="speakStop" disabled>Stop</button>
+  </div>
+  <p id="speakStatus" role="status" aria-live="polite">Not playing.</p>
+
+  <button id="a11y-reset">Reset all settings</button>
+</div>
+<script>
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ARROW='<span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+const px=(id,w)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
+/* Brand assets, inlined so they always resolve */
+const LOGO="data:image/png;base64,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";
+const MARK="data:image/png;base64,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";
+document.getElementById('logoNav').src=LOGO;
+document.getElementById('logoFoot').src=LOGO;
+document.getElementById('markMnav').src=MARK;
+
+const nav=document.getElementById('nav');
+const bar=document.getElementById('progress');
+const dith=document.getElementById('dither');
+const onScroll=()=>{
+  nav.classList.toggle('solid',scrollY>90);
+  const h=document.documentElement.scrollHeight-innerHeight;
+  bar.style.width=(h>0?(scrollY/h)*100:0)+'%';
+  if(dith&&!reduced&&scrollY<900) dith.style.transform='translateY('+(scrollY*0.16)+'px)';
+};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* Pause the hero video when it scrolls out of view */
+const hv=document.querySelector('.topshell-bg video');
+if(hv){
+  if(reduced) hv.pause();
+  else new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?hv.play().catch(()=>{}):hv.pause()),{threshold:.05}).observe(hv);
+}
+
+/* ── 02 Audience pathways ── */
+const PATHS=[
+ {img:8101922,alt:"Two people shaking hands across a desk after discussing a funding request",
+  who:"You're looking for funding for your organization.",
+  sub:"Start with what HIF funds, who can apply, and how the process works.",
+  links:[["Grant opportunities","Current funding opportunities from HIF"],
+         ["Eligibility","Check whether your organization can apply"],
+         ["How to apply","What the application process looks like"]]},
+ {img:5327868,alt:"Two healthcare workers talking through their work together",
+  who:"You already hold an HIF grant.",
+  sub:"Find the guidelines, key dates, and contacts for your grant.",
+  links:[["Grant guidelines","What HIF asks of its grant partners"],
+         ["Grant calendar","Key dates across the grantmaking cycle"],
+         ["Contact HIF","Reach the team with a question about your grant"]]},
+ {img:6646770,alt:"Volunteers organizing aid packages for a community program",
+  who:"You serve residents where you are.",
+  sub:"See what HIF funds and how grant support reaches local programs.",
+  links:[["What we fund","The kinds of work HIF grant funding supports"],
+         ["Funded projects","Work supported through HIF grantmaking"],
+         ["Community stories","How organizations put grant funding to work"]]},
+ {img:6627926,alt:"Doctors collaborating in a bright clinic",
+  who:"You deliver care and health services.",
+  sub:"Explore funding and partnership for expanding access to care.",
+  links:[["Grant opportunities","Funding for organizations expanding access to care"],
+         ["Partnerships","Working with HIF and other local organizations"],
+         ["Reports & publications","Research and materials from HIF"]]},
+ {img:6646933,alt:"Volunteers talking with a community member at a local event",
+  who:"You want to understand HIF's work.",
+  sub:"Learn who HIF is, what it funds, and how grants reach the community.",
+  links:[["Who we are","HIF's mission and the role of grant funding"],
+         ["Impact overview","How grantmaking strengthens healthcare access"],
+         ["News & updates","Recent updates from HIF"]]}
+];
+const pWho=document.getElementById('pWho'),pSub=document.getElementById('pSub'),pLinks=document.getElementById('pLinks'),pImg=document.getElementById('pImg');
+function renderPath(i){const d=PATHS[i];
+  pImg.src=px(d.img,1000);pImg.alt=d.alt;pWho.textContent=d.who;pSub.textContent=d.sub;
+  pLinks.innerHTML=d.links.map((l,n)=>`<a class="path-link" href="#"><span class="num">${String(n+1).padStart(2,'0')}</span><span><strong>${l[0]}</strong><em>${l[1]}</em></span>${ARROW}</a>`).join('');}
+document.querySelectorAll('.path').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.path').forEach(x=>x.setAttribute('aria-selected','false'));
+  b.setAttribute('aria-selected','true');renderPath(+b.dataset.p);}));
+renderPath(0);
+
+/* ── 04 Pillars ── */
+const PILLARS=[
+ {t:"Understand community needs",img:6646978,alt:"A volunteer listening to a community member outdoors",
+  d:"Recognize healthcare access gaps and the needs of underserved communities.",foot:"Where the work starts"},
+ {t:"Fund local solutions",img:7654594,alt:"Colleagues shaking hands in an office to agree on a grant",
+  d:"Provide grant funding to organizations working to improve healthcare access and services.",foot:"Grant funding"},
+ {t:"Build partnerships",img:5327578,alt:"Two healthcare workers shaking hands outdoors",
+  d:"Work collaboratively with organizations and community partners to strengthen local impact.",foot:"Local collaboration"},
+ {t:"Strengthen communities",img:6646917,alt:"Volunteers bringing water and supplies to an older resident",
+  d:"Support efforts that help people access the healthcare and services they need.",foot:"Community outcomes"}
+];
+const PBAR=['var(--p3)','var(--acc)','var(--mint)','var(--warm)'];
+document.getElementById('pillars-grid').innerHTML=PILLARS.map((p,i)=>`
+ <a class="pillar rise" href="#" aria-label="${p.t} — ${p.foot}">
+   <div class="pic"><img src="${px(p.img,900)}" alt="${p.alt}" loading="lazy"><span class="no">0${i+1}</span></div>
+   <span class="bar" style="background:${PBAR[i]}"></span>
+   <div class="in">
+     <h3>${p.t}</h3><p>${p.d}</p>
+     <div class="foot"><span>${p.foot}</span><span class="arrow" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+   </div>
+ </a>`).join('');
+
+/* ── 05 Evidence → Action ── */
+const CASES=[
+ {stage:"Community need",img:6647034,alt:"Outreach volunteers knocking on a resident's door",
+  blurb:"Identify healthcare needs and gaps affecting underserved communities.",
+  kicker:"Stage 01 · Community need",title:"It starts with a gap in access",
+  quote:"A need shows up first in the community — in the care people can't reach.",
+  detail:"Organizations working across Montgomery County see where residents struggle to get care, and what is missing from the services available to them. That local view is where HIF's grantmaking begins.",
+  metrics:[["Local","needs seen by organizations on the ground"],["Access","the gap grant funding works to close"],["Residents","underserved communities at the center"]]},
+ {stage:"Grant support",img:4623517,alt:"Colleagues shaking hands during a meeting",
+  blurb:"Provide funding to organizations working to address those needs.",
+  kicker:"Stage 02 · Grant support",title:"A grant backs a local response",
+  quote:"A grant is funding an organization can put directly into its work.",
+  detail:"HIF provides grant funding to organizations that provide healthcare and improve access to health services for underserved residents in Montgomery County. Eligibility, guidelines, and the application process are set out before you apply.",
+  metrics:[["Eligibility","who can apply, explained up front"],["Guidelines","what a request should cover"],["Calendar","how the grantmaking cycle runs"]]},
+ {stage:"Community action",img:6646928,alt:"Volunteers loading boxes of medicine into a van for distribution",
+  blurb:"Grant partners put resources into programs, services, and solutions.",
+  kicker:"Stage 03 · Community action",title:"Organizations turn funding into services",
+  quote:"Grant partners decide how the funding meets the need in front of them.",
+  detail:"Funding becomes programs, services, and solutions delivered by the organizations closest to the people they serve — the ones who already know the community.",
+  metrics:[["Programs","run by organizations close to the need"],["Services","delivered in the community"],["Partners","working together locally"]]},
+ {stage:"Impact",img:35837132,alt:"Two nurses and a patient smiling outside a local hospital",
+  blurb:"Healthcare access and community outcomes are strengthened through local action.",
+  kicker:"Stage 04 · Impact",title:"Access improves where people live",
+  quote:"Healthcare access strengthens through the work of local organizations.",
+  detail:"The result of grantmaking shows up locally — in the services residents can reach, and in the organizations able to keep providing them.",
+  metrics:[["Access","strengthened through local organizations"],["Community","outcomes supported by grant funding"],["Stories","how partners describe the change"]]}
+];
+document.getElementById('track').innerHTML=CASES.map((c,i)=>`
+ <button class="stage" role="tab" aria-selected="${i===0}" data-s="${i}">
+   <span class="tick">STAGE 0${i+1}</span>
+   <span class="bulb"><img src="${px(c.img,400)}" alt="${c.alt}" loading="lazy"></span>
+   <h4>${c.stage}</h4><p>${c.blurb}</p>
+ </button>`).join('');
+const cK=document.getElementById('cKicker'),cT=document.getElementById('cTitle'),cQ=document.getElementById('cQuote'),
+      cD=document.getElementById('cDetail'),cM=document.getElementById('cMetrics'),cP=document.getElementById('cProg'),cI=document.getElementById('cImg');
+let stage=0,timer=null;
+function renderCase(i){stage=i;const c=CASES[i];
+  cK.textContent=c.kicker;cT.textContent=c.title;cQ.textContent=c.quote;cD.textContent=c.detail;cI.src=px(c.img,900);cI.alt=c.alt;
+  cM.innerHTML=c.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('');
+  [...cP.children].forEach((el,n)=>el.classList.toggle('on',n<=i));
+  document.querySelectorAll('.stage').forEach((s,n)=>s.setAttribute('aria-selected',n===i?'true':'false'));}
+document.querySelectorAll('.stage').forEach(s=>s.addEventListener('click',()=>{renderCase(+s.dataset.s);restart();}));
+function restart(){clearInterval(timer);if(!reduced)timer=setInterval(()=>renderCase((stage+1)%4),5400);}
+renderCase(0);restart();
+const pw=document.querySelector('.pipe-wrap');
+pw.addEventListener('mouseenter',()=>clearInterval(timer));
+pw.addEventListener('mouseleave',restart);
+
+/* ── 06 Initiatives ── */
+const INITS=[
+ {cls:"feature",tag:"Area 01",tc:"rgba(255,255,255,.18)",t:"Healthcare access",img:8248433,alt:"A health worker checking an older woman's blood pressure",
+  d:"Supporting efforts that help underserved communities connect with essential healthcare services.",cta:"Explore the work"},
+ {cls:"",tag:"Area 02",tc:"var(--p3)",t:"Community health",img:34717769,alt:"A healthcare worker smiling with two children outdoors",
+  d:"Backing organizations that meet health needs where people live, learn, and gather.",cta:"Explore the work"},
+ {cls:"accent",tag:"Area 03",tc:"rgba(15,47,92,.45)",t:"Health services",img:29941468,alt:"Two nurses smiling in a clinic",
+  d:"Funding the day-to-day services that keep care within reach for local residents.",cta:"Explore the work"},
+ {cls:"",tag:"Area 04",tc:"var(--warm)",t:"Community partnerships",img:6646907,alt:"Volunteers carrying boxes of medicine and food from a van",
+  d:"Working with organizations and partners who share a local goal and a local footprint.",cta:"Explore the work"},
+ {cls:"",tag:"Area 05",tc:"var(--plum)",t:"Healthcare equity",img:36633133,alt:"A child receiving a dental checkup at a community clinic",
+  d:"Supporting work that closes gaps in access for residents who are underserved.",cta:"Explore the work"},
+ {cls:"",tag:"Area 06",tc:"var(--acc)",t:"Local impact",img:6646867,alt:"Volunteers passing aid boxes along to residents",
+  d:"Grant funding stays close to home — in the communities HIF serves across Montgomery County.",cta:"Explore the work"}
+];
+document.getElementById('inits').innerHTML=INITS.map(i=>`
+ <a class="init ${i.cls} rise" href="#">
+   <div class="pic ph"><img src="${px(i.img,800)}" alt="${i.alt}" loading="lazy"><span class="tag" style="background:${i.tc}">${i.tag}</span></div>
+   <div class="in"><h3>${i.t}</h3><p>${i.d}</p><span class="go">${i.cta} ${ARROW}</span></div>
+ </a>`).join('');
+
+/* ── 08 People ── */
+const PARTNERS=[
+ {img:6646940,alt:"Volunteers sorting donations for a community program",t:"Community organizations",
+  d:"Local nonprofits delivering services where residents already are.",badge:"Partners"},
+ {img:6129644,alt:"Doctors and nurses talking in a hospital hallway",t:"Healthcare organizations",
+  d:"Providers and clinics working to keep care within reach.",badge:"Healthcare"},
+ {img:6646850,alt:"Volunteers holding boxes of medicine and aid",t:"Grant partners",
+  d:"Organizations putting HIF grant funding to work in the community.",badge:"Grantmaking"},
+ {img:30688593,alt:"A group of professionals meeting around a table",t:"Local leaders",
+  d:"People coordinating care, services, and support close to home.",badge:"Community"},
+ {img:5668526,alt:"Colleagues shaking hands across a table",t:"Community partnerships",
+  d:"Organizations working together toward a shared local goal.",badge:"Partners"},
+ {img:6647027,alt:"Two outreach volunteers visiting homes in a neighborhood",t:"Outreach teams",
+  d:"Teams connecting residents with the services available to them.",badge:"Community"}
+];
+document.getElementById('rail').innerHTML=PARTNERS.map(p=>`
+ <article class="person">
+   <div class="bg"><img src="${px(p.img,700)}" alt="${p.alt}" loading="lazy"></div>
+   <div class="in"><h4>${p.t}</h4><p>${p.d}</p><span class="badge">${p.badge}</span></div>
+ </article>`).join('');
+const step=()=>(document.querySelector('.person')?.offsetWidth||280)+20;
+document.getElementById('railPrev').onclick=()=>document.getElementById('rail').scrollBy({left:-step(),behavior:reduced?'auto':'smooth'});
+document.getElementById('railNext').onclick=()=>document.getElementById('rail').scrollBy({left:step(),behavior:reduced?'auto':'smooth'});
+
+/* ── 09 Posts ── */
+const POSTS=[
+ {img:30688593,alt:"A team meeting to talk through a grant program",kicker:"Grantmaking",kc:"var(--p3)",
+  meta:"Overview",t:"Understanding HIF's grantmaking approach",cta:"Read the overview"},
+ {img:6646886,alt:"A volunteer handing out an aid box at a community event",kicker:"HIF updates",kc:"var(--acc)",
+  meta:"Guide",t:"How community organizations can explore HIF funding",cta:"Read the guide"},
+ {img:37191914,alt:"A health professional helping at a community health awareness event",kicker:"Community impact",kc:"var(--p1)",
+  meta:"Stories",t:"Stories from organizations strengthening healthcare access",cta:"Read the stories"}
+];
+document.getElementById('posts').innerHTML=POSTS.map(p=>`
+ <a class="post rise" href="#">
+   <div class="thumb ph"><img src="${px(p.img,800)}" alt="${p.alt}" loading="lazy"><span class="kicker" style="background:${p.kc}">${p.kicker}</span></div>
+   <div class="body"><time>${p.meta}</time><h3>${p.t}</h3>
+     <span class="go">${p.cta} ${ARROW}</span></div>
+ </a>`).join('');
+
+/* ── Marquee ── */
+const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;
+
+/* ── Newsletter ── */
+document.querySelectorAll('.int').forEach(b=>b.addEventListener('click',()=>
+  b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')));
+/* newsletter submit is handled by the validated handler below */
+
+/* ── Reveal ── */
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),
+ {threshold:.1,rootMargin:'0px 0px -40px'});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);});
+
+/* ── Impact counters: fast countdown, settling on the final number ── */
+const co=new IntersectionObserver(es=>es.forEach(en=>{
+ if(!en.isIntersecting)return;
+ const el=en.target,target=+el.dataset.count,suf=el.dataset.suffix||'';
+ const paint=v=>el.innerHTML=v+(suf?`<span class="suf">${suf}</span>`:'');
+ co.unobserve(el);
+ if(reduced){paint(target);return;}
+ el.parentElement.classList.add('spin');
+ const digits=String(target).length, from=Math.max(target*4, Math.pow(10,digits)-1);
+ const dur=1500, t0=performance.now();
+ const tick=now=>{
+   const p=Math.min((now-t0)/dur,1);
+   if(p<.62){                                   // fast blur of numbers spinning down
+     const lo=target, hi=from-(from-target)*(p/.62);
+     paint(Math.round(lo+Math.random()*(hi-lo)));
+     requestAnimationFrame(tick);
+   }else{                                       // decelerate onto the real figure
+     const q=(p-.62)/.38, e=1-Math.pow(1-q,3);
+     paint(Math.round(target+(from-target)*.16*(1-e)));
+     if(p<1)requestAnimationFrame(tick);
+     else{paint(target);el.parentElement.classList.remove('spin');}
+   }
+ };
+ requestAnimationFrame(tick);
+}),{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* ══════════════ THEME: light by default, visitor can switch ══════════════ */
+const root=document.documentElement, themeBtn=document.getElementById('themeBtn');
+let themeManual=false;
+function setTheme(t,manual){
+  root.setAttribute('data-theme',t);
+  if(manual)themeManual=true;
+  const dark=t==='dark';
+  themeBtn.setAttribute('aria-pressed',String(dark));
+  themeBtn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+  const m=document.querySelector('meta[name="theme-color"]');
+  if(m)m.setAttribute('content',dark?'#081426':'#ffffff');
+}
+setTheme('light',false);
+themeBtn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark',true));
+
+/* ══════════════ ACCESSIBILITY PANEL ══════════════ */
+const fab=document.getElementById('a11y-fab'), panel=document.getElementById('a11y-panel');
+function openPanel(open){
+  panel.hidden=!open;
+  fab.setAttribute('aria-expanded',String(open));
+  if(open)panel.querySelector('.a11y-row').focus();
+}
+fab.addEventListener('click',()=>openPanel(panel.hidden));
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!panel.hidden){openPanel(false);fab.focus();}
+});
+document.addEventListener('click',e=>{
+  if(!panel.hidden&&!panel.contains(e.target)&&!fab.contains(e.target))openPanel(false);
+});
+
+const ATTRS={bw:'data-bw',contrast:'data-contrast',bigtext:'data-bigtext',ulinks:'data-ulinks',motion:'data-motion'};
+panel.querySelectorAll('[data-toggle]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const key=btn.dataset.toggle, on=btn.getAttribute('aria-pressed')!=='true';
+    btn.setAttribute('aria-pressed',String(on));
+    if(key==='motion'){
+      root.setAttribute(ATTRS[key], on?'off':'on');
+      if(on&&hv)hv.pause(); else if(hv)hv.play().catch(()=>{});
+      if(on)clearInterval(timer); else restart();
+    }else{
+      on?root.setAttribute(ATTRS[key],'on'):root.removeAttribute(ATTRS[key]);
+    }
+  });
+});
+document.getElementById('a11y-reset').addEventListener('click',()=>{
+  Object.values(ATTRS).forEach(a=>root.removeAttribute(a));
+  panel.querySelectorAll('[data-toggle]').forEach(b=>b.setAttribute('aria-pressed','false'));
+  stopSpeech(); if(hv)hv.play().catch(()=>{}); restart();
+});
+
+/* ══════════════ READ ALOUD — clear voice selection ══════════════ */
+const synth=window.speechSynthesis;
+const playBtn=document.getElementById('speakPlay'),pauseBtn=document.getElementById('speakPause'),
+      stopBtn=document.getElementById('speakStop'),status=document.getElementById('speakStatus'),
+      voiceSel=document.getElementById('voiceSel'),rateSel=document.getElementById('rateSel');
+let queue=[],qi=0,voices=[],chosen=null;
+
+/* the clearest, most natural engines first; robotic legacy voices last */
+const PREFERRED=[
+  'Google US English','Google UK English Female','Google UK English Male',
+  'Microsoft Aria','Microsoft Jenny','Microsoft Guy','Microsoft Emma','Microsoft Libby',
+  'Samantha','Karen','Serena','Daniel','Alex','Moira'
+];
+function rank(v){
+  const n=v.name;
+  for(let i=0;i<PREFERRED.length;i++) if(n.indexOf(PREFERRED[i])>-1) return i;
+  if(/Zira|David|Hazel|Fiona|compact|Albert|Bad News|Bells/i.test(n)) return 900;
+  if(v.localService) return 200;
+  return 400;
+}
+function loadVoices(){
+  if(!synth)return;
+  voices=synth.getVoices().filter(v=>/^en(-|_|$)/i.test(v.lang));
+  if(!voices.length)voices=synth.getVoices();
+  voices.sort((a,b)=>rank(a)-rank(b));
+  voiceSel.innerHTML=voices.map((v,i)=>
+    '<option value="'+i+'">'+v.name.replace(/Microsoft |Google /,'')+' ('+v.lang+')</option>').join('');
+  chosen=voices[0]||null;
+}
+if(synth){
+  loadVoices();
+  synth.addEventListener('voiceschanged',loadVoices);
+  voiceSel.addEventListener('change',()=>{chosen=voices[voiceSel.value];if(synth.speaking)restartSpeech();});
+  rateSel.addEventListener('change',()=>{if(synth.speaking)restartSpeech();});
+}
+
+/* strip characters that screen voices stumble over */
+function clean(t){
+  return t.replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"')
+          .replace(/[\u2014\u2013]/g,', ').replace(/\u00b7/g,'. ')
+          .replace(/&/g,' and ').replace(/\s+/g,' ').trim();
+}
+function collect(){
+  const sel='main h1, main h2, main h3, main .lede, main .detail, main .quote, main blockquote, main .post h3';
+  return [...document.querySelectorAll(sel)]
+    .filter(el=>el.offsetParent!==null)
+    .map(el=>({el,text:clean(el.textContent)}))
+    .filter(o=>o.text.length>2);
+}
+function speakNext(){
+  if(qi>=queue.length){finishSpeech();return;}
+  const cur=queue[qi];
+  document.querySelectorAll('.speaking').forEach(e=>e.classList.remove('speaking'));
+  cur.el.classList.add('speaking');
+  cur.el.scrollIntoView({block:'center',behavior:root.getAttribute('data-motion')==='off'?'auto':'smooth'});
+  const u=new SpeechSynthesisUtterance(cur.text+'.');
+  if(chosen){u.voice=chosen;u.lang=chosen.lang;}else{u.lang='en-US';}
+  u.rate=parseFloat(rateSel.value)||0.95; u.pitch=1; u.volume=1;
+  u.onend=()=>{qi++;setTimeout(speakNext,260);};   /* a beat between blocks aids comprehension */
+  u.onerror=()=>{qi++;setTimeout(speakNext,120);};
+  synth.speak(u);
+  status.textContent='Reading '+(qi+1)+' of '+queue.length+' — '+(chosen?chosen.name:'default voice')+'.';
+}
+function restartSpeech(){const at=qi;synth.cancel();qi=at;setTimeout(speakNext,120);}
+function finishSpeech(){
+  document.querySelectorAll('.speaking').forEach(e=>e.classList.remove('speaking'));
+  status.textContent='Finished reading.';
+  playBtn.textContent='Play';pauseBtn.disabled=true;stopBtn.disabled=true;
+}
+function stopSpeech(){
+  if(synth)synth.cancel();
+  qi=0;queue=[];
+  document.querySelectorAll('.speaking').forEach(e=>e.classList.remove('speaking'));
+  status.textContent='Not playing.';
+  playBtn.textContent='Play';pauseBtn.disabled=true;pauseBtn.textContent='Pause';stopBtn.disabled=true;
+}
+if(!synth){
+  playBtn.disabled=true;status.textContent='Your browser does not support speech synthesis.';
+}else{
+  playBtn.addEventListener('click',()=>{
+    if(synth.speaking&&synth.paused){synth.resume();pauseBtn.textContent='Pause';return;}
+    stopSpeech();
+    queue=collect();
+    if(!queue.length){status.textContent='Nothing to read on this page.';return;}
+    qi=0;pauseBtn.disabled=false;stopBtn.disabled=false;playBtn.textContent='Restart';
+    speakNext();
+  });
+  pauseBtn.addEventListener('click',()=>{
+    if(synth.paused){synth.resume();pauseBtn.textContent='Pause';status.textContent='Resumed.';}
+    else{synth.pause();pauseBtn.textContent='Resume';status.textContent='Paused.';}
+  });
+  stopBtn.addEventListener('click',stopSpeech);
+  addEventListener('beforeunload',()=>synth.cancel());
+}
+
+/* ══════════════ KEYBOARD SUPPORT FOR TABLISTS (WCAG 2.2) ══════════════ */
+function arrowNav(selector){
+  const items=[...document.querySelectorAll(selector)];
+  items.forEach((el,i)=>{
+    el.setAttribute('tabindex', el.getAttribute('aria-selected')==='true'?'0':'-1');
+    el.addEventListener('keydown',e=>{
+      let n=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%items.length;
+      if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i-1+items.length)%items.length;
+      if(e.key==='Home')n=0;
+      if(e.key==='End')n=items.length-1;
+      if(n===null)return;
+      e.preventDefault();items[n].click();items[n].focus();
+      items.forEach((x,j)=>x.setAttribute('tabindex',j===n?'0':'-1'));
+    });
+  });
+}
+arrowNav('.path');
+arrowNav('.stage');
+
+/* ══════════════ HEURISTICS ══════════════ */
+/* H3 user control — close the panel explicitly */
+document.getElementById('a11y-close').addEventListener('click',()=>{openPanel(false);fab.focus();});
+
+/* Only the homepage exists for now, so "Home" stays selected at all times.
+   No scroll spy: the header state never changes while scrolling. */
+
+/* H3 user control — back to top */
+const toTop=document.getElementById('toTop');
+toTop.addEventListener('click',()=>{
+  scrollTo({top:0,behavior:root.getAttribute('data-motion')==='off'?'auto':'smooth'});
+  document.getElementById('main-content').focus();
+});
+addEventListener('scroll',()=>toTop.classList.toggle('show',scrollY>700),{passive:true});
+
+/* WCAG 2.2.2 — one control pauses all background motion */
+const motionBtn=document.getElementById('motionBtn'),motionLabel=document.getElementById('motionLabel');
+motionBtn.addEventListener('click',()=>{
+  const paused=motionBtn.getAttribute('aria-pressed')!=='true';
+  motionBtn.setAttribute('aria-pressed',String(paused));
+  motionLabel.textContent=paused?'Play background motion':'Pause background motion';
+  root.setAttribute('data-motion',paused?'off':'on');
+  const panelToggle=panel.querySelector('[data-toggle="motion"]');
+  if(panelToggle)panelToggle.setAttribute('aria-pressed',String(paused));
+  if(hv){paused?hv.pause():hv.play().catch(()=>{});}
+  paused?clearInterval(timer):restart();
+});
+
+/* H5 error prevention + H9 recovery — inline, specific, recoverable */
+const emailInput=document.getElementById('email'),emailErr=document.getElementById('emailError'),
+      newsRow=document.querySelector('.news-row');
+function clearErr(){emailErr.removeAttribute('data-show');newsRow.removeAttribute('data-invalid');
+  emailInput.removeAttribute('aria-invalid');emailInput.removeAttribute('aria-describedby');}
+emailInput.addEventListener('input',clearErr);
+document.getElementById('newsForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!emailInput.value.trim()||!emailInput.checkValidity()){
+    emailErr.setAttribute('data-show','true');
+    newsRow.setAttribute('data-invalid','true');
+    emailInput.setAttribute('aria-invalid','true');
+    emailInput.setAttribute('aria-describedby','emailError');
+    emailInput.focus();
+    return;
+  }
+  clearErr();
+  document.getElementById('newsOk').style.display='block';
+  emailInput.value='';
+},true);
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE EXPERIENCE — drawer + physical card decks
+   Only ever runs under 760px; desktop behaviour is unchanged.
+   ══════════════════════════════════════════════════════════ */
+const MQ=matchMedia('(max-width:760px)');
+
+/* ── drawer ── */
+const mnav=document.getElementById('mobileNav');
+const burger=document.querySelector('.burger');
+let lastFocus=null;
+function openMenu(open){
+  if(open){
+    lastFocus=document.activeElement;
+    mnav.hidden=false;
+    requestAnimationFrame(()=>mnav.setAttribute('data-open','true'));
+    document.body.style.overflow='hidden';
+    burger.setAttribute('aria-expanded','true');
+    setTimeout(()=>mnav.querySelector('.mnav-links a').focus(),260);
+  }else{
+    mnav.removeAttribute('data-open');
+    document.body.style.overflow='';
+    burger.setAttribute('aria-expanded','false');
+    setTimeout(()=>{mnav.hidden=true;},360);
+    if(lastFocus)lastFocus.focus();
+  }
+}
+burger.setAttribute('aria-expanded','false');
+burger.setAttribute('aria-controls','mobileNav');
+burger.addEventListener('click',()=>openMenu(mnav.hidden));
+mnav.addEventListener('click',e=>{
+  if(e.target.closest('[data-close]')||e.target.closest('.mnav-links a'))openMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!mnav.hidden)openMenu(false);
+  if(e.key==='Tab'&&!mnav.hidden){          /* keep focus inside the drawer */
+    const f=[...mnav.querySelectorAll('a,button')].filter(el=>el.offsetParent!==null);
+    if(!f.length)return;
+    const first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
+
+/* ── card decks ── */
+const TILT=[0,-2.8,2.4,-1.6];
+const DECK_DEFS=[
+  {id:'pillars-grid',noun:'step'},
+  {id:'inits',       noun:'area of work'},
+  {id:'posts',       noun:'update'}
+];
+const decks=[];
+
+function makeDeck(def){
+  const el=document.getElementById(def.id);
+  if(!el)return null;
+  const cards=[...el.children];
+  if(cards.length<2)return null;
+  const d={el,cards,i:0,nav:null,noun:def.noun};
+
+  const nav=document.createElement('div');
+  nav.className='deck-nav';
+  nav.innerHTML=
+    '<button class="deck-btn" data-dir="-1" aria-label="Previous '+def.noun+'"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>'+
+    '<div style="display:flex;align-items:center;gap:12px">'+
+      '<span class="deck-dots" aria-hidden="true">'+cards.map(()=>'<i></i>').join('')+'</span>'+
+      '<span class="deck-count" role="status" aria-live="polite"></span>'+
+    '</div>'+
+    '<button class="deck-btn" data-dir="1" aria-label="Next '+def.noun+'"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
+  const hint=document.createElement('p');
+  hint.className='deck-hint';
+  hint.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 4 12l5 6M15 6l5 6-5 6"/></svg> Swipe or use the arrows';
+  d.nav=nav; d.hint=hint;
+  nav.addEventListener('click',e=>{
+    const b=e.target.closest('[data-dir]'); if(!b)return;
+    move(d,+b.dataset.dir);
+  });
+  return d;
+}
+
+function layout(d){
+  const n=d.cards.length;
+  let tallest=0;
+  d.cards.forEach((c,idx)=>{
+    const pos=(idx-d.i+n)%n;
+    c.style.setProperty('--o',Math.min(pos,3));
+    c.style.setProperty('--r',pos===0?0:TILT[Math.min(pos,3)]);
+    c.style.setProperty('--x','0px');
+    c.style.setProperty('--dr','0deg');
+    c.style.zIndex=String(n-Math.min(pos,3));
+    c.dataset.front=pos===0?'true':'false';
+    c.dataset.stacked=pos>2?'hidden':'shown';
+    c.setAttribute('aria-hidden',pos===0?'false':'true');
+    c.classList.add('in');                    /* decks are always revealed */
+    if(pos===0)tallest=Math.max(tallest,c.offsetHeight);
+  });
+  if(tallest)d.el.style.setProperty('--deck-h',(tallest+26)+'px');
+  d.nav.querySelectorAll('.deck-dots i').forEach((dot,k)=>dot.classList.toggle('on',k===d.i));
+  d.nav.querySelector('.deck-count').textContent=(d.i+1)+' / '+n;
+}
+function move(d,dir){
+  const n=d.cards.length;
+  d.i=(d.i+dir+n)%n;
+  layout(d);
+}
+
+/* drag / swipe on the front card */
+function attachSwipe(d){
+  let x0=null,y0=null,dx=0,active=null,locked=false;
+  const el=d.el;
+  const down=e=>{
+    const t=e.touches?e.touches[0]:e;
+    active=d.cards[d.i];
+    if(!active)return;
+    x0=t.clientX;y0=t.clientY;dx=0;locked=false;
+  };
+  const mv=e=>{
+    if(x0===null)return;
+    const t=e.touches?e.touches[0]:e;
+    dx=t.clientX-x0;
+    const dy=t.clientY-y0;
+    if(!locked){
+      if(Math.abs(dy)>Math.abs(dx)){x0=null;return;}   /* vertical scroll wins */
+      locked=true;el.classList.add('dragging');
+    }
+    if(e.cancelable)e.preventDefault();
+    active.style.setProperty('--x',dx+'px');
+    active.style.setProperty('--dr',(dx*0.035)+'deg');
+  };
+  const up=()=>{
+    if(x0===null){el.classList.remove('dragging');return;}
+    el.classList.remove('dragging');
+    const threshold=Math.min(110,el.offsetWidth*0.26);
+    if(Math.abs(dx)>threshold){
+      active.style.setProperty('--x',(dx>0?600:-600)+'px');
+      active.style.setProperty('--dr',(dx>0?14:-14)+'deg');
+      setTimeout(()=>move(d,dx>0?-1:1),170);
+    }else{
+      active.style.setProperty('--x','0px');
+      active.style.setProperty('--dr','0deg');
+    }
+    x0=null;dx=0;
+    /* a drag must never fire the card's link */
+    if(locked){const a=active;a.addEventListener('click',stop,{once:true,capture:true});
+      setTimeout(()=>a.removeEventListener('click',stop,true),50);}
+  };
+  const stop=e=>{e.preventDefault();e.stopPropagation();};
+  el.addEventListener('touchstart',down,{passive:true});
+  el.addEventListener('touchmove',mv,{passive:false});
+  el.addEventListener('touchend',up);
+  el.addEventListener('mousedown',down);
+  addEventListener('mousemove',e=>{if(x0!==null)mv(e);});
+  addEventListener('mouseup',up);
+  d._swipe=true;
+}
+
+function enableDecks(){
+  DECK_DEFS.forEach(def=>{
+    if(decks.some(d=>d.el.id===def.id))return;
+    const d=makeDeck(def);
+    if(!d)return;
+    d.el.classList.add('deck');
+    d.el.after(d.hint);
+    d.el.after(d.nav);
+    if(!d._swipe)attachSwipe(d);
+    layout(d);
+    decks.push(d);
+  });
+}
+function disableDecks(){
+  while(decks.length){
+    const d=decks.pop();
+    d.el.classList.remove('deck');
+    d.el.style.removeProperty('--deck-h');
+    d.cards.forEach(c=>{
+      ['--o','--r','--x','--dr'].forEach(v=>c.style.removeProperty(v));
+      c.style.zIndex='';
+      delete c.dataset.front;delete c.dataset.stacked;
+      c.removeAttribute('aria-hidden');
+    });
+    d.nav.remove();d.hint.remove();
+  }
+}
+function syncMobile(){
+  if(MQ.matches)enableDecks(); else {disableDecks(); if(!mnav.hidden)openMenu(false);}
+  decks.forEach(layout);
+}
+/* run after the card templates have been written into the DOM */
+requestAnimationFrame(syncMobile);
+addEventListener('load',()=>decks.forEach(layout));
+MQ.addEventListener('change',syncMobile);
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>decks.forEach(layout),160);},{passive:true});
+</script>
+</body>
+</html>
